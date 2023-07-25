@@ -14,6 +14,7 @@
 		8B51B7F22A70830300B3B8F8 /* RickAndMortyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51B7F12A70830300B3B8F8 /* RickAndMortyTests.swift */; };
 		8B51B7FC2A70830300B3B8F8 /* RickAndMortyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51B7FB2A70830300B3B8F8 /* RickAndMortyUITests.swift */; };
 		8B51B7FE2A70830300B3B8F8 /* RickAndMortyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51B7FD2A70830300B3B8F8 /* RickAndMortyUITestsLaunchTests.swift */; };
+		8B51B8122A70969900B3B8F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B51B8142A70969900B3B8F8 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		8B51B7F72A70830300B3B8F8 /* RickAndMortyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B51B7FB2A70830300B3B8F8 /* RickAndMortyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyUITests.swift; sourceTree = "<group>"; };
 		8B51B7FD2A70830300B3B8F8 /* RickAndMortyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8B51B8132A70969900B3B8F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8B51B8152A7096B300B3B8F8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +99,7 @@
 			children = (
 				8B51B7E02A70830100B3B8F8 /* RickAndMortyApp.swift */,
 				8B51B7E22A70830100B3B8F8 /* ContentView.swift */,
-				8B51B7E42A70830300B3B8F8 /* Assets.xcassets */,
+				8B51B80D2A70901A00B3B8F8 /* Resources */,
 				8B51B7E62A70830300B3B8F8 /* Preview Content */,
 			);
 			path = RickAndMorty;
@@ -125,6 +128,15 @@
 				8B51B7FD2A70830300B3B8F8 /* RickAndMortyUITestsLaunchTests.swift */,
 			);
 			path = RickAndMortyUITests;
+			sourceTree = "<group>";
+		};
+		8B51B80D2A70901A00B3B8F8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B51B7E42A70830300B3B8F8 /* Assets.xcassets */,
+				8B51B8142A70969900B3B8F8 /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +225,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 8B51B7D42A70830100B3B8F8;
 			productRefGroup = 8B51B7DE2A70830100B3B8F8 /* Products */;
@@ -232,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B51B7E82A70830300B3B8F8 /* Preview Assets.xcassets in Resources */,
+				8B51B8122A70969900B3B8F8 /* Localizable.strings in Resources */,
 				8B51B7E52A70830300B3B8F8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,11 +308,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		8B51B8142A70969900B3B8F8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B51B8132A70969900B3B8F8 /* en */,
+				8B51B8152A7096B300B3B8F8 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		8B51B7FF2A70830300B3B8F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -359,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
