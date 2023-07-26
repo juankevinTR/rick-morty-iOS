@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8B51B7E12A70830100B3B8F8 /* RickAndMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51B7E02A70830100B3B8F8 /* RickAndMortyApp.swift */; };
-		8B51B7E32A70830100B3B8F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51B7E22A70830100B3B8F8 /* ContentView.swift */; };
+		8B51B7E32A70830100B3B8F8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51B7E22A70830100B3B8F8 /* MainView.swift */; };
 		8B51B7E52A70830300B3B8F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B51B7E42A70830300B3B8F8 /* Assets.xcassets */; };
 		8B51B7E82A70830300B3B8F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B51B7E72A70830300B3B8F8 /* Preview Assets.xcassets */; };
 		8B51B7F22A70830300B3B8F8 /* RickAndMortyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51B7F12A70830300B3B8F8 /* RickAndMortyTests.swift */; };
@@ -37,7 +37,7 @@
 /* Begin PBXFileReference section */
 		8B51B7DD2A70830100B3B8F8 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B51B7E02A70830100B3B8F8 /* RickAndMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyApp.swift; sourceTree = "<group>"; };
-		8B51B7E22A70830100B3B8F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8B51B7E22A70830100B3B8F8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8B51B7E42A70830300B3B8F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B51B7E72A70830300B3B8F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8B51B7ED2A70830300B3B8F8 /* RickAndMortyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,8 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				8B51B7E02A70830100B3B8F8 /* RickAndMortyApp.swift */,
-				8B51B7E22A70830100B3B8F8 /* ContentView.swift */,
-				8B51B80D2A70901A00B3B8F8 /* Resources */,
+				8B51B8162A7099A200B3B8F8 /* App */,
 				8B51B7E62A70830300B3B8F8 /* Preview Content */,
 			);
 			path = RickAndMorty;
@@ -137,6 +136,47 @@
 				8B51B8142A70969900B3B8F8 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		8B51B8162A7099A200B3B8F8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8B51B8172A7099B500B3B8F8 /* Models */,
+				8B51B81A2A709A4200B3B8F8 /* Networking */,
+				8B51B80D2A70901A00B3B8F8 /* Resources */,
+				8B51B8192A7099D100B3B8F8 /* ViewModels */,
+				8B51B8182A7099C000B3B8F8 /* Views */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8B51B8172A7099B500B3B8F8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8B51B8182A7099C000B3B8F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8B51B7E22A70830100B3B8F8 /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8B51B8192A7099D100B3B8F8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8B51B81A2A709A4200B3B8F8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,7 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B51B7E32A70830100B3B8F8 /* ContentView.swift in Sources */,
+				8B51B7E32A70830100B3B8F8 /* MainView.swift in Sources */,
 				8B51B7E12A70830100B3B8F8 /* RickAndMortyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
