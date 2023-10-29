@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  RickAndMorty
+
+  Created by Juan Kevin Trujillo on 26/7/23.
+  
+*/
+
+"hello_world" = "¡Hola, mundo!";
