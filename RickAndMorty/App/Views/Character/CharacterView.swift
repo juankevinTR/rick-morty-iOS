@@ -11,7 +11,9 @@ struct CharacterView: View {
     @StateObject private var characterViewModel: CharacterViewModel
 
     init() {
-        let characterRepository = CharacterRepositoryImpl(networkService: NetworkServiceImpl())
+        let networkService: NetworkService = NetworkServiceImpl()
+        
+        let characterRepository = CharacterRepositoryImpl(networkService: networkService)
         self._characterViewModel = StateObject(
             wrappedValue: CharacterViewModel(characterRepository: characterRepository)
         )
