@@ -11,7 +11,7 @@ struct TabBarView: View {
     var body: some View {
         TabView {
             // Add tab bar items here
-            Text("Tab 1")
+            HomeView()
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("view_tabbar_home")
