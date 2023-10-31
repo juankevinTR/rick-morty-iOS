@@ -17,9 +17,9 @@ class CharacterViewModel: ObservableObject {
         self.characterRepository = characterRepository
     }
 
-    func fetchCharacter() {
+    func fetchCharacter(characterId: Int) {
         self.loading = true
-        let charecterRequestModel = CharacterRequestModel(characterId: 5)
+        let charecterRequestModel = CharacterRequestModel(characterId: characterId)
 
         characterRepository.getCharacter(requestModel: charecterRequestModel) { result in
             DispatchQueue.main.async {

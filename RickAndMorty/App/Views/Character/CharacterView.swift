@@ -28,11 +28,11 @@ struct CharacterView: View {
             } else if characterViewModel.loading {
                 ProgressView()
             } else {
-                Text("Any character was found.")
+                Text("view_no_characters_found")
             }
         }
         .onAppear {
-            characterViewModel.fetchCharacter()
+            characterViewModel.fetchCharacter(characterId: 1)
         }
     }
 }
