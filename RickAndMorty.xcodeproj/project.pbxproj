@@ -17,6 +17,8 @@
 		8B51B8122A70969900B3B8F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B51B8142A70969900B3B8F8 /* Localizable.strings */; };
 		8B84499C2AF1544100E5BF2D /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84499B2AF1544100E5BF2D /* TabBarView.swift */; };
 		8B84499F2AF1568500E5BF2D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84499E2AF1568500E5BF2D /* HomeView.swift */; };
+		8B8449A32AF157CE00E5BF2D /* EpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8449A22AF157CE00E5BF2D /* EpisodesView.swift */; };
+		8B8449A52AF157E900E5BF2D /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8449A42AF157E900E5BF2D /* CharactersView.swift */; };
 		8BA8264F2AEF52360010989B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA8264E2AEF52360010989B /* NetworkService.swift */; };
 		8BA826512AEF52580010989B /* NetworkServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA826502AEF52580010989B /* NetworkServiceImpl.swift */; };
 		8BA826552AEF5F030010989B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA826542AEF5F030010989B /* NetworkError.swift */; };
@@ -65,6 +67,8 @@
 		8B51B8152A7096B300B3B8F8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B84499B2AF1544100E5BF2D /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		8B84499E2AF1568500E5BF2D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8B8449A22AF157CE00E5BF2D /* EpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesView.swift; sourceTree = "<group>"; };
+		8B8449A42AF157E900E5BF2D /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
 		8BA8264E2AEF52360010989B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkService.swift; path = ../NetworkService.swift; sourceTree = "<group>"; };
 		8BA826502AEF52580010989B /* NetworkServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceImpl.swift; sourceTree = "<group>"; };
 		8BA826542AEF5F030010989B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -194,11 +198,11 @@
 		8B51B8182A7099C000B3B8F8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8B84499D2AF1567800E5BF2D /* Home */,
 				8BF629FE2AF103C90076DDC5 /* Character */,
 				8BF62A012AF10B9B0076DDC5 /* Common */,
 				8B51B7E22A70830100B3B8F8 /* MainView.swift */,
 				8B84499B2AF1544100E5BF2D /* TabBarView.swift */,
+				8B8449A62AF157EE00E5BF2D /* TabBarViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +229,32 @@
 				8B84499E2AF1568500E5BF2D /* HomeView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		8B8449A02AF157AF00E5BF2D /* Chracters */ = {
+			isa = PBXGroup;
+			children = (
+				8B8449A42AF157E900E5BF2D /* CharactersView.swift */,
+			);
+			path = Chracters;
+			sourceTree = "<group>";
+		};
+		8B8449A12AF157BE00E5BF2D /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				8B8449A22AF157CE00E5BF2D /* EpisodesView.swift */,
+			);
+			path = Episodes;
+			sourceTree = "<group>";
+		};
+		8B8449A62AF157EE00E5BF2D /* TabBarViews */ = {
+			isa = PBXGroup;
+			children = (
+				8B8449A02AF157AF00E5BF2D /* Chracters */,
+				8B8449A12AF157BE00E5BF2D /* Episodes */,
+				8B84499D2AF1567800E5BF2D /* Home */,
+			);
+			path = TabBarViews;
 			sourceTree = "<group>";
 		};
 		8BA826562AEF6A1F0010989B /* ResponseModel */ = {
@@ -470,11 +500,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B8449A32AF157CE00E5BF2D /* EpisodesView.swift in Sources */,
 				8B84499C2AF1544100E5BF2D /* TabBarView.swift in Sources */,
 				8BF62A052AF10C280076DDC5 /* CharacterCardViewModel.swift in Sources */,
 				8BA826512AEF52580010989B /* NetworkServiceImpl.swift in Sources */,
 				8B51B7E32A70830100B3B8F8 /* MainView.swift in Sources */,
 				8BF629F62AF0ED060076DDC5 /* Character.swift in Sources */,
+				8B8449A52AF157E900E5BF2D /* CharactersView.swift in Sources */,
 				8B51B7E12A70830100B3B8F8 /* RickAndMortyApp.swift in Sources */,
 				8BF629F82AF0F1C30076DDC5 /* CharacterViewModel.swift in Sources */,
 				8BF62A032AF10BB20076DDC5 /* CharacterCardView.swift in Sources */,

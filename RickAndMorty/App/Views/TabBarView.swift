@@ -10,7 +10,6 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView {
-            // Add tab bar items here
             HomeView()
                 .tabItem {
                     Image(systemName: "house.fill")
@@ -18,14 +17,14 @@ struct TabBarView: View {
                 }
                 .tag(0)
 
-            Text("Tab 2")
+            CharactersView()
                 .tabItem {
                     Image(systemName: "person.3.fill")
                     Text("view_tabbar_characters")
                 }
                 .tag(1)
 
-            Text("Tab 3")
+            EpisodesView()
                 .tabItem {
                     Image(systemName: "film.fill")
                     Text("view_tabbar_episodes")
