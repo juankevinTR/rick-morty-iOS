@@ -15,6 +15,15 @@
 		8B51B7FC2A70830300B3B8F8 /* RickAndMortyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51B7FB2A70830300B3B8F8 /* RickAndMortyUITests.swift */; };
 		8B51B7FE2A70830300B3B8F8 /* RickAndMortyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51B7FD2A70830300B3B8F8 /* RickAndMortyUITestsLaunchTests.swift */; };
 		8B51B8122A70969900B3B8F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B51B8142A70969900B3B8F8 /* Localizable.strings */; };
+		8BA8264F2AEF52360010989B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA8264E2AEF52360010989B /* NetworkService.swift */; };
+		8BA826512AEF52580010989B /* NetworkServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA826502AEF52580010989B /* NetworkServiceImpl.swift */; };
+		8BA826552AEF5F030010989B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA826542AEF5F030010989B /* NetworkError.swift */; };
+		8BA826592AEF6A2E0010989B /* CharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA826582AEF6A2E0010989B /* CharacterResponse.swift */; };
+		8BE5B12F2AEF117E009B74BF /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5B12E2AEF117E009B74BF /* APIRequest.swift */; };
+		8BE5B1352AEF4145009B74BF /* CharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5B1342AEF4145009B74BF /* CharacterRepository.swift */; };
+		8BE5B1372AEF415E009B74BF /* CharacterRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5B1362AEF415E009B74BF /* CharacterRepositoryImpl.swift */; };
+		8BE5B13B2AEF434C009B74BF /* CharacterRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5B13A2AEF434C009B74BF /* CharacterRequestModel.swift */; };
+		8BF629F62AF0ED060076DDC5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF629F52AF0ED060076DDC5 /* Character.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +56,15 @@
 		8B51B7FD2A70830300B3B8F8 /* RickAndMortyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8B51B8132A70969900B3B8F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B51B8152A7096B300B3B8F8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8BA8264E2AEF52360010989B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkService.swift; path = ../NetworkService.swift; sourceTree = "<group>"; };
+		8BA826502AEF52580010989B /* NetworkServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceImpl.swift; sourceTree = "<group>"; };
+		8BA826542AEF5F030010989B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		8BA826582AEF6A2E0010989B /* CharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponse.swift; sourceTree = "<group>"; };
+		8BE5B12E2AEF117E009B74BF /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		8BE5B1342AEF4145009B74BF /* CharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepository.swift; sourceTree = "<group>"; };
+		8BE5B1362AEF415E009B74BF /* CharacterRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryImpl.swift; sourceTree = "<group>"; };
+		8BE5B13A2AEF434C009B74BF /* CharacterRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRequestModel.swift; sourceTree = "<group>"; };
+		8BF629F52AF0ED060076DDC5 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +171,7 @@
 		8B51B8172A7099B500B3B8F8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8BF629F42AF0ECF70076DDC5 /* Character */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -175,8 +194,88 @@
 		8B51B81A2A709A4200B3B8F8 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				8BE5B1302AEF40B2009B74BF /* Endpoints */,
+				8BE5B1492AEF4A98009B74BF /* Service */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		8BA826562AEF6A1F0010989B /* ResponseModel */ = {
+			isa = PBXGroup;
+			children = (
+				8BA826582AEF6A2E0010989B /* CharacterResponse.swift */,
+			);
+			path = ResponseModel;
+			sourceTree = "<group>";
+		};
+		8BE5B1302AEF40B2009B74BF /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				8BE5B1312AEF40BB009B74BF /* Character */,
+				8BE5B1332AEF40DC009B74BF /* Episode */,
+				8BE5B1322AEF40CD009B74BF /* Location */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		8BE5B1312AEF40BB009B74BF /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				8BE5B1382AEF4311009B74BF /* Repository */,
+				8BE5B1392AEF4323009B74BF /* RequestModel */,
+				8BA826562AEF6A1F0010989B /* ResponseModel */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		8BE5B1322AEF40CD009B74BF /* Location */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		8BE5B1332AEF40DC009B74BF /* Episode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Episode;
+			sourceTree = "<group>";
+		};
+		8BE5B1382AEF4311009B74BF /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				8BE5B1342AEF4145009B74BF /* CharacterRepository.swift */,
+				8BE5B1362AEF415E009B74BF /* CharacterRepositoryImpl.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		8BE5B1392AEF4323009B74BF /* RequestModel */ = {
+			isa = PBXGroup;
+			children = (
+				8BE5B13A2AEF434C009B74BF /* CharacterRequestModel.swift */,
+			);
+			path = RequestModel;
+			sourceTree = "<group>";
+		};
+		8BE5B1492AEF4A98009B74BF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8BE5B12E2AEF117E009B74BF /* APIRequest.swift */,
+				8BA826542AEF5F030010989B /* NetworkError.swift */,
+				8BA8264E2AEF52360010989B /* NetworkService.swift */,
+				8BA826502AEF52580010989B /* NetworkServiceImpl.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		8BF629F42AF0ECF70076DDC5 /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				8BF629F52AF0ED060076DDC5 /* Character.swift */,
+			);
+			path = Character;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,8 +433,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA826512AEF52580010989B /* NetworkServiceImpl.swift in Sources */,
 				8B51B7E32A70830100B3B8F8 /* MainView.swift in Sources */,
+				8BF629F62AF0ED060076DDC5 /* Character.swift in Sources */,
 				8B51B7E12A70830100B3B8F8 /* RickAndMortyApp.swift in Sources */,
+				8BE5B1352AEF4145009B74BF /* CharacterRepository.swift in Sources */,
+				8BA826552AEF5F030010989B /* NetworkError.swift in Sources */,
+				8BE5B13B2AEF434C009B74BF /* CharacterRequestModel.swift in Sources */,
+				8BA8264F2AEF52360010989B /* NetworkService.swift in Sources */,
+				8BE5B12F2AEF117E009B74BF /* APIRequest.swift in Sources */,
+				8BA826592AEF6A2E0010989B /* CharacterResponse.swift in Sources */,
+				8BE5B1372AEF415E009B74BF /* CharacterRepositoryImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +530,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -485,7 +593,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
