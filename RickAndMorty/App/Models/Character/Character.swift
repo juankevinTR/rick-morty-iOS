@@ -79,3 +79,29 @@ struct CharacterLocation: Codable, Hashable {
         )
     }
 }
+
+// MARK: - Mock
+extension Character {
+    static func getMock() -> Character {
+        return Character(
+            id: 0,
+            name: "Juan Kevin Trujillo",
+            status: CharacterStatus.alive,
+            species: "Human",
+            type: "",
+            gender: CharacterGender.male,
+            origin: CharacterLocation(
+                name: "Gran Canaria",
+                url: ""
+            ),
+            location: CharacterLocation(
+                name: "Murcia",
+                url: "")
+            ,
+            image: "",
+            episode: [],
+            url: "https://www.linkedin.com/in/juankevintrujillo/",
+            created: "1992-09-21T00:00:00.000Z"
+        )
+    }
+}
