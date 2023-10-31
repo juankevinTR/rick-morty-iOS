@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - App
-struct Character: Codable {
+struct Character: Codable, Hashable {
     let id: Int?
     let name: String
     let status: CharacterStatus?
@@ -42,7 +42,7 @@ struct Character: Codable {
     }
 }
 
-enum CharacterStatus: String, Codable {
+enum CharacterStatus: String, Codable, Hashable {
     case alive = "Alive"
     case dead = "Dead"
     case unknown = "unknown"
@@ -54,7 +54,7 @@ enum CharacterStatus: String, Codable {
     }
 }
 
-enum CharacterGender: String, Codable {
+enum CharacterGender: String, Codable, Hashable {
     case female = "Female"
     case male = "Male"
     case unknown = "unknown"
@@ -66,7 +66,7 @@ enum CharacterGender: String, Codable {
     }
 }
 
-struct CharacterLocation: Codable {
+struct CharacterLocation: Codable, Hashable {
     let name: String
     let url: String
 
