@@ -15,4 +15,8 @@
 "network_service_invalid_url" = "Invalid URL";
 "network_service_no_data" = "No data received";
 
+"view_tabbar_home" = "Home";
+"view_tabbar_characters" = "Chracters";
+"view_tabbar_episodes" = "Episodes";
+
 "view_no_characters_found" = "Any character was found";

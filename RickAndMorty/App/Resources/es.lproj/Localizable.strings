@@ -15,4 +15,8 @@
 "network_service_invalid_url" = "URL no válida";
 "network_service_no_data" = "No se recibieron datos";
 
+"view_tabbar_home" = "Inicio";
+"view_tabbar_characters" = "Personajes";
+"view_tabbar_episodes" = "Episodios";
+
 "view_no_characters_found" = "Personajes no encontrados";
