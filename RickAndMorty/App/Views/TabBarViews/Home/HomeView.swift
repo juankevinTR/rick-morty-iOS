@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var didOnAppearFinish = false
     @StateObject private var homeViewModel: HomeViewModel
 
     init() {
@@ -26,10 +27,15 @@ struct HomeView: View {
             VStack {
                 if let characters = homeViewModel.characters {
                     ScrollView(.vertical) {
-                        ForEach(characters, id: \.self) { character in
-                            CharacterCardView(
-                                viewModel: CharacterCardVM.getWith(character: character)
-                            )
+                        LazyVStack {
+                            ForEach(characters, id: \.self) { character in
+                                NavigationLink(destination: CharacterDetailView(character: character)) {
+                                    CharacterCardView(
+                                        viewModel: CharacterCardVM.getWith(character: character)
+                                    )
+                                }
+                                .buttonStyle(.plain)
+                            }
                         }
                     }
                 } else if homeViewModel.loading {
@@ -40,7 +46,10 @@ struct HomeView: View {
             }
             .navigationBarTitle("view_tabbar_home")
             .onAppear {
-                homeViewModel.fetchRandomCharacters()
+                if !didOnAppearFinish {
+                    homeViewModel.fetchRandomCharacters()
+                    self.didOnAppearFinish = true
+                }
             }
         }
     }
