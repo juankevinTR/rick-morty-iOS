@@ -12,7 +12,7 @@ struct CharacterView: View {
 
     init() {
         let networkService: NetworkService = NetworkServiceImpl()
-        
+
         let characterRepository = CharacterRepositoryImpl(networkService: networkService)
         self._characterViewModel = StateObject(
             wrappedValue: CharacterViewModel(characterRepository: characterRepository)
