@@ -195,6 +195,7 @@
 				8BF629FE2AF103C90076DDC5 /* Character */,
 				8BF62A012AF10B9B0076DDC5 /* Common */,
 				8B51B7E22A70830100B3B8F8 /* MainView.swift */,
+				8B84499B2AF1544100E5BF2D /* TabBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,7 +219,6 @@
 		8B84499A2AF1542F00E5BF2D /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				8B84499B2AF1544100E5BF2D /* TabBarView.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
