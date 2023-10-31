@@ -10,18 +10,10 @@ import SwiftUI
 struct MainView: View {
 
     var body: some View {
-        // Main content
-        TabBarView()
-
-//        VStack {
-//            Image(systemName: "globe")
-//                .imageScale(.large)
-//                .foregroundColor(.accentColor)
-//            Text("hello_world")
-//
-//            CharacterView()
-//        }
-//        .padding()
+        NavigationView {
+            // Main content
+            TabBarView()
+        }
     }
 }
 
