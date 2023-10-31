@@ -7,3 +7,10 @@
 */
 
 "hello_world" = "Hello, world!";
+
+"api_request_invalid_default_base_url" = "Default API base url could not be retrieved.";
+
+"network_service_decoding_error" = "Decoding error";
+"network_service_invalid_response" = "Invalid response";
+"network_service_invalid_url" = "Invalid URL";
+"network_service_no_data" = "No data received";

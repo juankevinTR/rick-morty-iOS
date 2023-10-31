@@ -7,3 +7,10 @@
 */
 
 "hello_world" = "¡Hola, mundo!";
+
+"api_request_invalid_default_base_url" = "No se pudo obtener la url base de la API.";
+
+"network_service_decoding_error" = "Error de decodificación";
+"network_service_invalid_response" = "Respuesta no válida";
+"network_service_invalid_url" = "URL no válida";
+"network_service_no_data" = "No se recibieron datos";
