@@ -8,5 +8,8 @@
 import Foundation
 
 protocol MultipleCharactersRepository {
-    func getCharacters(requestModel: MultipleCharactersRequestModel, completion: @escaping(Result<[Character], Error>) -> Void)
+    func getCharacters(
+        requestModel: MultipleCharactersRequestModel,
+        completion: @escaping(Result<[Character], Error>) -> Void
+    )
 }
