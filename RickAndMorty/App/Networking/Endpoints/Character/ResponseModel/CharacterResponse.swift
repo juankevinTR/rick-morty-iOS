@@ -27,3 +27,23 @@ struct CharacterLocationResponse: Codable {
     let name: String
     let url: String
 }
+
+// MARK: - Mock
+extension CharacterResponse {
+    static func getMock() -> CharacterResponse {
+        return CharacterResponse(
+            id: 0,
+            name: "Mock character",
+            status: "Alive",
+            species: nil,
+            type: nil,
+            gender: nil,
+            origin: nil,
+            location: nil,
+            image: nil,
+            episode: nil,
+            url: nil,
+            created: nil
+        )
+    }
+}
