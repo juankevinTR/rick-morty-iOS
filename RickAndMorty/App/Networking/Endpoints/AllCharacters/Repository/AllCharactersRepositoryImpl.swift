@@ -18,17 +18,14 @@ class AllCharactersRepositoryImpl {
 extension AllCharactersRepositoryImpl: AllCharactersRepository {
     func getAllCharacters(
         requestModel: AllCharactersRequestModel,
-        completion: @escaping (Result<[Character], Error>) -> Void
+        completion: @escaping (Result<AllCharacters, Error>) -> Void
     ) {
         let request = AllCharactersRequest(model: requestModel)
 
         networkService.executeRequest(request: request) { result in
             switch result {
             case .success(let data):
-                let characters: [Character] = data.compactMap { characterResponse in
-                    Character.getWith(response: characterResponse)
-                }
-                completion(.success(characters))
+                completion(.success(AllCharacters.getWith(response: data)))
             case .failure(let error):
                 completion(.failure(error))
             }

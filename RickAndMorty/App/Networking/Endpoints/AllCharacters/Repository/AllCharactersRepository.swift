@@ -10,6 +10,6 @@ import Foundation
 protocol AllCharactersRepository {
     func getAllCharacters(
         requestModel: AllCharactersRequestModel,
-        completion: @escaping(Result<[Character], Error>) -> Void
+        completion: @escaping(Result<AllCharacters, Error>) -> Void
     )
 }
