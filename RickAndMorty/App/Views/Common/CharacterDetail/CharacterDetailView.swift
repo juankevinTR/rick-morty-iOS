@@ -38,12 +38,12 @@ struct CharacterDetailView: View {
                         .cornerRadius(10)
                 }
 
-                Text("Status: \(viewModel.status.getLocalized())")
-                Text("Species: \(viewModel.species)")
-                Text("Type: \(viewModel.type)")
-                Text("Gender: \(viewModel.gender.getLocalized())")
-                Text("Origin: \(viewModel.originName)")
-                Text("Last known location: \(viewModel.lastLocationName)")
+                Text("character_detail_description_status \(viewModel.status.getLocalized())")
+                Text("character_detail_description_species \(viewModel.species)")
+                Text("character_detail_description_type \(viewModel.type)")
+                Text("character_detail_description_gender \(viewModel.gender.getLocalized())")
+                Text("character_detail_description_origin_location \(viewModel.originName)")
+                Text("character_detail_description_last_location \(viewModel.lastLocationName)")
             }
             .navigationBarTitle(viewModel.name)
             .navigationBarTitleDisplayMode(.inline)
@@ -51,6 +51,7 @@ struct CharacterDetailView: View {
         }
 
         Spacer() // Push the content to the left
+
     }
 }
 
