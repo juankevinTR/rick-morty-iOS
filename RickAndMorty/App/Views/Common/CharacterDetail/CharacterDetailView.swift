@@ -51,7 +51,6 @@ struct CharacterDetailView: View {
         }
 
         Spacer()
-
     }
 }
 
