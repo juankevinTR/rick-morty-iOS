@@ -10,6 +10,9 @@
 
 "api_request_invalid_default_base_url" = "Default API base url could not be retrieved.";
 
+"character_detail_description_title" = "Description"
+"character_detail_description" = "Description"
+
 "character_gender_female" = "Female";
 "character_gender_male" = "Male";
 "character_gender_unknown" = "Unknown";
@@ -28,3 +31,4 @@
 "view_tabbar_episodes" = "Episodes";
 
 "view_no_characters_found" = "Any character was found";
+

@@ -17,8 +17,8 @@ struct Character: Codable, Hashable {
     let gender: CharacterGender?
     let origin: CharacterLocation
     let location: CharacterLocation
-    let image: String
-    let episode: [String]
+    let image: String?
+    let episodes: [String]
     let url: String
     let created: String
 
@@ -34,8 +34,8 @@ struct Character: Codable, Hashable {
             gender: CharacterGender.getWith(response: response.gender),
             origin: CharacterLocation.getWith(response: response.origin),
             location: CharacterLocation.getWith(response: response.location),
-            image: response.image ?? "",
-            episode: response.episode ?? [],
+            image: response.image,
+            episodes: response.episode ?? [],
             url: response.url ?? "",
             created: response.created ?? ""
         )
@@ -115,7 +115,7 @@ extension Character {
                 url: "")
             ,
             image: "",
-            episode: [],
+            episodes: [],
             url: "https://www.linkedin.com/in/juankevintrujillo/",
             created: "1992-09-21T00:00:00.000Z"
         )

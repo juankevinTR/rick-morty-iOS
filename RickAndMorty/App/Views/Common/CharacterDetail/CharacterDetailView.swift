@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct CharacterDetailView: View {
-    let character: Character
+    @StateObject private var viewModel: CharacterDetailViewModel
+
     let horizontalPadding: CGFloat = 10
+
+    init(character: Character) {
+        self._viewModel = StateObject(
+            wrappedValue: CharacterDetailViewModel(
+                character: character
+            )
+        )
+    }
 
     var body: some View {
         GeometryReader { geometry in
@@ -17,32 +26,26 @@ struct CharacterDetailView: View {
                 // Calculate the maximum width for the image
                 let maxWidth = min(geometry.size.width - 2 * horizontalPadding, geometry.size.height)
 
-                AsyncImage(url: URL(string: character.image)) { phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: maxWidth, height: maxWidth)
-                            .cornerRadius(10)
-                    } else if phase.error != nil {
-                        // Handle the error, e.g., display a placeholder image or error message
-                    } else {
-                        Image(systemName: "camera.metering.unknown")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: maxWidth, height: maxWidth)
-                            .cornerRadius(10)
-                    }
+                if !viewModel.loadingImage {
+                    viewModel.image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: maxWidth, height: maxWidth)
+                        .cornerRadius(10)
+                } else {
+                    ProgressView()
+                        .frame(width: maxWidth, height: maxWidth)
+                        .cornerRadius(10)
                 }
 
-                Text("Status: \(character.status?.rawValue ?? "Unknown")")
-                Text("Species: \(character.species)")
-                Text("Type: \(character.type)")
-                Text("Gender: \(character.gender?.rawValue ?? "Unknown")")
-                Text("Origin: \(character.origin.name)")
-                Text("Last known location:: \(character.location.name)")
+                Text("Status: \(viewModel.status.getLocalized())")
+                Text("Species: \(viewModel.species)")
+                Text("Type: \(viewModel.type)")
+                Text("Gender: \(viewModel.gender.getLocalized())")
+                Text("Origin: \(viewModel.originName)")
+                Text("Last known location: \(viewModel.lastLocationName)")
             }
-            .navigationBarTitle(character.name)
+            .navigationBarTitle(viewModel.name)
             .navigationBarTitleDisplayMode(.inline)
             .padding([.leading, .trailing], horizontalPadding)
         }

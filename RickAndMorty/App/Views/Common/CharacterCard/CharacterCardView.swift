@@ -8,23 +8,26 @@
 import SwiftUI
 
 struct CharacterCardView: View {
-    let viewModel: CharacterCardVM
+    @StateObject private var viewModel: CharacterCardViewModel
+
+    init(character: Character) {
+        self._viewModel = StateObject(
+            wrappedValue: CharacterCardViewModel(
+                character: character
+            )
+        )
+    }
 
     var body: some View {
         HStack(spacing: 15) {
-            AsyncImage(url: viewModel.imageURL) { phase in
-                if let image = phase.image {
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 100) // You can adjust the size as needed
-                } else if phase.error != nil {
-                    // Handle the error, e.g., display a placeholder image or error message
-                } else {
-                    Image(systemName: "camera.metering.unknown")
-                        .resizable()
-                        .frame(width: 100, height: 100) // You can adjust the size as needed
-                }
+            if !viewModel.loadingImage {
+                viewModel.image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 100, height: 100)
+            } else {
+                ProgressView()
+                    .frame(width: 100, height: 100)
             }
 
             VStack(alignment: .leading, spacing: 8) {
@@ -35,14 +38,13 @@ struct CharacterCardView: View {
                     Circle()
                         .fill(.blue)
                         .frame(width: 10, height: 10)
-                    Text("\(viewModel.status?.rawValue ?? "None") - \(viewModel.species)")
+                    Text("\(viewModel.status.getLocalized()) - \(viewModel.species)")
                         .font(.subheadline)
                 }
             }
 
-            Spacer() // This pushes the text column to the top
+            Spacer()
         }
-        .padding()
         .background(Color.gray)
         .cornerRadius(10)
         .shadow(radius: 4)
@@ -50,13 +52,5 @@ struct CharacterCardView: View {
 }
 
 #Preview {
-    CharacterCardView(
-        viewModel:
-            CharacterCardVM(
-                name: "Mock name",
-                status: nil,
-                species: "Mock species",
-                imageURL: URL(string: "https://rickandmortyapi.com/api/character/avatar/516.jpeg")
-            )
-    )
+    CharacterCardView(character: Character.getMock())
 }

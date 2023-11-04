@@ -30,9 +30,8 @@ struct HomeView: View {
                         LazyVStack {
                             ForEach(characters, id: \.self) { character in
                                 NavigationLink(destination: CharacterDetailView(character: character)) {
-                                    CharacterCardView(
-                                        viewModel: CharacterCardVM.getWith(character: character)
-                                    )
+                                    CharacterCardView(character: character)
+                                        .padding([.leading, .trailing], 10)
                                 }
                                 .buttonStyle(.plain)
                             }
