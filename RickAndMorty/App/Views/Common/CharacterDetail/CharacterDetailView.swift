@@ -50,7 +50,7 @@ struct CharacterDetailView: View {
             .padding([.leading, .trailing], horizontalPadding)
         }
 
-        Spacer() // Push the content to the left
+        Spacer()
 
     }
 }
