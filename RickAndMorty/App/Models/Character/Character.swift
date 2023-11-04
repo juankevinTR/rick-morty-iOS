@@ -53,11 +53,11 @@ enum CharacterStatus: String, Codable, Hashable {
         return CharacterStatus(rawValue: response ?? "")
     }
 
-    func getLocalizedKey() -> String {
+    func getLocalized() -> String {
         switch self {
-        case .alive: return "status_alive"
-        case .dead: return "status_dead"
-        case .unknown: return "status_unknown"
+        case .alive: return NSLocalizedString("character_status_alive", comment: "")
+        case .dead: return NSLocalizedString("character_status_dead", comment: "")
+        case .unknown: return NSLocalizedString("character_status_unknown", comment: "")
         }
     }
 }
@@ -71,6 +71,14 @@ enum CharacterGender: String, Codable, Hashable {
         response: String?
     ) -> CharacterGender? {
         return CharacterGender(rawValue: response ?? "")
+    }
+
+    func getLocalized() -> String {
+        switch self {
+        case .female: return NSLocalizedString("character_gender_female", comment: "")
+        case .male: return NSLocalizedString("character_gender_male", comment: "")
+        case .unknown: return NSLocalizedString("character_gender_unknown", comment: "")
+        }
     }
 }
 

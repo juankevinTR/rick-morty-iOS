@@ -10,6 +10,10 @@
 
 "api_request_invalid_default_base_url" = "No se pudo obtener la url base de la API.";
 
+"character_gender_female" = "Femenino";
+"character_gender_male" = "Masculino";
+"character_gender_unknown" = "Desconocido";
+
 "character_status_alive" = "Vivo";
 "character_status_dead" = "Fallecido";
 "character_status_unknown" = "Desconocido";
