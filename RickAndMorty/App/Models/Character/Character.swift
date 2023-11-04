@@ -52,6 +52,14 @@ enum CharacterStatus: String, Codable, Hashable {
     ) -> CharacterStatus? {
         return CharacterStatus(rawValue: response ?? "")
     }
+
+    func getLocalizedKey() -> String {
+        switch self {
+        case .alive: return "status_alive"
+        case .dead: return "status_dead"
+        case .unknown: return "status_unknown"
+        }
+    }
 }
 
 enum CharacterGender: String, Codable, Hashable {

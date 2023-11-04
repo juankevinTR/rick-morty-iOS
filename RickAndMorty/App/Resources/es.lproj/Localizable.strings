@@ -10,6 +10,10 @@
 
 "api_request_invalid_default_base_url" = "No se pudo obtener la url base de la API.";
 
+"character_status_alive" = "Vivo";
+"character_status_dead" = "Fallecido";
+"character_status_unknown" = "Desconocido";
+
 "network_service_decoding_error" = "Error de decodificación";
 "network_service_invalid_response" = "Respuesta no válida";
 "network_service_invalid_url" = "URL no válida";
