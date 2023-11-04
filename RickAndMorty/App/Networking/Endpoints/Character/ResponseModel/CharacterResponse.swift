@@ -33,7 +33,7 @@ extension CharacterResponse {
     static func getMock() -> CharacterResponse {
         return CharacterResponse(
             id: 0,
-            name: "Mock character",
+            name: "Mock CharacterResponse",
             status: "Alive",
             species: nil,
             type: nil,

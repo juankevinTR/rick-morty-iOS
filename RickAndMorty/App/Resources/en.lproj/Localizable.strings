@@ -10,6 +10,21 @@
 
 "api_request_invalid_default_base_url" = "Default API base url could not be retrieved.";
 
+"character_detail_description_status %@" = "Status: %1$@";
+"character_detail_description_species %@" = "Species: %1$@";
+"character_detail_description_type %@" = "Type: %1$@";
+"character_detail_description_gender %@" = "Gender: %1$@";
+"character_detail_description_origin_location %@" = "Origin location: %1$@";
+"character_detail_description_last_location %@" = "Last location: %1$@";
+
+"character_gender_female" = "Female";
+"character_gender_male" = "Male";
+"character_gender_unknown" = "Unknown";
+
+"character_status_alive" = "Alive";
+"character_status_dead" = "Dead";
+"character_status_unknown" = "Unknown";
+
 "network_service_decoding_error" = "Decoding error";
 "network_service_invalid_response" = "Invalid response";
 "network_service_invalid_url" = "Invalid URL";
@@ -20,3 +35,4 @@
 "view_tabbar_episodes" = "Episodes";
 
 "view_no_characters_found" = "Any character was found";
+

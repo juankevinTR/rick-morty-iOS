@@ -10,6 +10,21 @@
 
 "api_request_invalid_default_base_url" = "No se pudo obtener la url base de la API.";
 
+"character_detail_description_status %@" = "Estado: %1$@";
+"character_detail_description_species %@" = "Especie: %1$@";
+"character_detail_description_type %@" = "Tipo: %1$@";
+"character_detail_description_gender %@" = "Género: %1$@";
+"character_detail_description_origin_location %@" = "Origen: %1$@";
+"character_detail_description_last_location %@" = "Última ubicación: %1$@";
+
+"character_gender_female" = "Femenino";
+"character_gender_male" = "Masculino";
+"character_gender_unknown" = "Desconocido";
+
+"character_status_alive" = "Vivo";
+"character_status_dead" = "Fallecido";
+"character_status_unknown" = "Desconocido";
+
 "network_service_decoding_error" = "Error de decodificación";
 "network_service_invalid_response" = "Respuesta no válida";
 "network_service_invalid_url" = "URL no válida";

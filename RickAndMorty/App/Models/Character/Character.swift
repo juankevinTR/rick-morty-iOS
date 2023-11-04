@@ -17,8 +17,8 @@ struct Character: Codable, Hashable {
     let gender: CharacterGender?
     let origin: CharacterLocation
     let location: CharacterLocation
-    let image: String
-    let episode: [String]
+    let image: String?
+    let episodes: [String]
     let url: String
     let created: String
 
@@ -34,8 +34,8 @@ struct Character: Codable, Hashable {
             gender: CharacterGender.getWith(response: response.gender),
             origin: CharacterLocation.getWith(response: response.origin),
             location: CharacterLocation.getWith(response: response.location),
-            image: response.image ?? "",
-            episode: response.episode ?? [],
+            image: response.image,
+            episodes: response.episode ?? [],
             url: response.url ?? "",
             created: response.created ?? ""
         )
@@ -52,6 +52,14 @@ enum CharacterStatus: String, Codable, Hashable {
     ) -> CharacterStatus? {
         return CharacterStatus(rawValue: response ?? "")
     }
+
+    func getLocalized() -> String {
+        switch self {
+        case .alive: return NSLocalizedString("character_status_alive", comment: "")
+        case .dead: return NSLocalizedString("character_status_dead", comment: "")
+        case .unknown: return NSLocalizedString("character_status_unknown", comment: "")
+        }
+    }
 }
 
 enum CharacterGender: String, Codable, Hashable {
@@ -63,6 +71,14 @@ enum CharacterGender: String, Codable, Hashable {
         response: String?
     ) -> CharacterGender? {
         return CharacterGender(rawValue: response ?? "")
+    }
+
+    func getLocalized() -> String {
+        switch self {
+        case .female: return NSLocalizedString("character_gender_female", comment: "")
+        case .male: return NSLocalizedString("character_gender_male", comment: "")
+        case .unknown: return NSLocalizedString("character_gender_unknown", comment: "")
+        }
     }
 }
 
@@ -76,6 +92,32 @@ struct CharacterLocation: Codable, Hashable {
         return CharacterLocation(
             name: response?.name ?? "",
             url: response?.url ?? ""
+        )
+    }
+}
+
+// MARK: - Mock
+extension Character {
+    static func getMock() -> Character {
+        return Character(
+            id: 0,
+            name: "Juan Kevin Trujillo",
+            status: CharacterStatus.alive,
+            species: "Human",
+            type: "",
+            gender: CharacterGender.male,
+            origin: CharacterLocation(
+                name: "Gran Canaria",
+                url: ""
+            ),
+            location: CharacterLocation(
+                name: "Murcia",
+                url: "")
+            ,
+            image: "",
+            episodes: [],
+            url: "https://www.linkedin.com/in/juankevintrujillo/",
+            created: "1992-09-21T00:00:00.000Z"
         )
     }
 }

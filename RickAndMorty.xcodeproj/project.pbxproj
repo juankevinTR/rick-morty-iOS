@@ -23,6 +23,10 @@
 		8B8449AD2AF159C300E5BF2D /* MultipleCharactersRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8449AC2AF159C300E5BF2D /* MultipleCharactersRequestModel.swift */; };
 		8B8449AF2AF15A2E00E5BF2D /* MultipleCharactersRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8449AE2AF15A2E00E5BF2D /* MultipleCharactersRepositoryImpl.swift */; };
 		8B8449B12AF15C1E00E5BF2D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8449B02AF15C1D00E5BF2D /* HomeViewModel.swift */; };
+		8B8449B42AF1625A00E5BF2D /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8449B32AF1625A00E5BF2D /* CharacterDetailView.swift */; };
+		8B8449C02AF6443900E5BF2D /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8449BF2AF6443900E5BF2D /* ImageLoader.swift */; };
+		8B8449C22AF64C5A00E5BF2D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8449C12AF64C5A00E5BF2D /* Constants.swift */; };
+		8B8449C42AF6725F00E5BF2D /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8449C32AF6725F00E5BF2D /* CharacterDetailViewModel.swift */; };
 		8BA8264F2AEF52360010989B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA8264E2AEF52360010989B /* NetworkService.swift */; };
 		8BA826512AEF52580010989B /* NetworkServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA826502AEF52580010989B /* NetworkServiceImpl.swift */; };
 		8BA826552AEF5F030010989B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA826542AEF5F030010989B /* NetworkError.swift */; };
@@ -75,6 +79,10 @@
 		8B8449AC2AF159C300E5BF2D /* MultipleCharactersRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCharactersRequestModel.swift; sourceTree = "<group>"; };
 		8B8449AE2AF15A2E00E5BF2D /* MultipleCharactersRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCharactersRepositoryImpl.swift; sourceTree = "<group>"; };
 		8B8449B02AF15C1D00E5BF2D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8B8449B32AF1625A00E5BF2D /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		8B8449BF2AF6443900E5BF2D /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		8B8449C12AF64C5A00E5BF2D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8B8449C32AF6725F00E5BF2D /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		8BA8264E2AEF52360010989B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkService.swift; path = ../NetworkService.swift; sourceTree = "<group>"; };
 		8BA826502AEF52580010989B /* NetworkServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceImpl.swift; sourceTree = "<group>"; };
 		8BA826542AEF5F030010989B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -185,7 +193,7 @@
 				8B51B8172A7099B500B3B8F8 /* Models */,
 				8B51B81A2A709A4200B3B8F8 /* Networking */,
 				8B51B80D2A70901A00B3B8F8 /* Resources */,
-				8B51B8192A7099D100B3B8F8 /* ViewModels */,
+				8B8449BE2AF643FD00E5BF2D /* Utils */,
 				8B51B8182A7099C000B3B8F8 /* Views */,
 			);
 			path = App;
@@ -208,13 +216,6 @@
 				8B8449A62AF157EE00E5BF2D /* TabBarViews */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		8B51B8192A7099D100B3B8F8 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		8B51B81A2A709A4200B3B8F8 /* Networking */ = {
@@ -285,6 +286,33 @@
 				8B8449AC2AF159C300E5BF2D /* MultipleCharactersRequestModel.swift */,
 			);
 			path = RequestModel;
+			sourceTree = "<group>";
+		};
+		8B8449B22AF1624500E5BF2D /* CharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8B8449B32AF1625A00E5BF2D /* CharacterDetailView.swift */,
+				8B8449C32AF6725F00E5BF2D /* CharacterDetailViewModel.swift */,
+			);
+			path = CharacterDetail;
+			sourceTree = "<group>";
+		};
+		8B8449BD2AF1807E00E5BF2D /* CharacterCard */ = {
+			isa = PBXGroup;
+			children = (
+				8BF62A022AF10BB20076DDC5 /* CharacterCardView.swift */,
+				8BF62A042AF10C280076DDC5 /* CharacterCardViewModel.swift */,
+			);
+			path = CharacterCard;
+			sourceTree = "<group>";
+		};
+		8B8449BE2AF643FD00E5BF2D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8B8449C12AF64C5A00E5BF2D /* Constants.swift */,
+				8B8449BF2AF6443900E5BF2D /* ImageLoader.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		8BA826562AEF6A1F0010989B /* ResponseModel */ = {
@@ -361,8 +389,8 @@
 		8BF62A012AF10B9B0076DDC5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				8BF62A022AF10BB20076DDC5 /* CharacterCardView.swift */,
-				8BF62A042AF10C280076DDC5 /* CharacterCardViewModel.swift */,
+				8B8449BD2AF1807E00E5BF2D /* CharacterCard */,
+				8B8449B22AF1624500E5BF2D /* CharacterDetail */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -522,6 +550,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B8449C22AF64C5A00E5BF2D /* Constants.swift in Sources */,
 				8B8449A32AF157CE00E5BF2D /* EpisodesView.swift in Sources */,
 				8B84499C2AF1544100E5BF2D /* TabBarView.swift in Sources */,
 				8BF62A052AF10C280076DDC5 /* CharacterCardViewModel.swift in Sources */,
@@ -532,9 +561,12 @@
 				8B8449A52AF157E900E5BF2D /* CharactersView.swift in Sources */,
 				8B51B7E12A70830100B3B8F8 /* RickAndMortyApp.swift in Sources */,
 				8BF62A032AF10BB20076DDC5 /* CharacterCardView.swift in Sources */,
+				8B8449C42AF6725F00E5BF2D /* CharacterDetailViewModel.swift in Sources */,
 				8BE5B1352AEF4145009B74BF /* CharacterRepository.swift in Sources */,
 				8B84499F2AF1568500E5BF2D /* HomeView.swift in Sources */,
+				8B8449B42AF1625A00E5BF2D /* CharacterDetailView.swift in Sources */,
 				8B8449AF2AF15A2E00E5BF2D /* MultipleCharactersRepositoryImpl.swift in Sources */,
+				8B8449C02AF6443900E5BF2D /* ImageLoader.swift in Sources */,
 				8BA826552AEF5F030010989B /* NetworkError.swift in Sources */,
 				8BE5B13B2AEF434C009B74BF /* CharacterRequestModel.swift in Sources */,
 				8BA8264F2AEF52360010989B /* NetworkService.swift in Sources */,
