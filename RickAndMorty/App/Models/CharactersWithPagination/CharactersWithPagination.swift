@@ -35,3 +35,4 @@ struct CharactersWithPagination: Codable, Hashable {
         return nil
     }
 }
+

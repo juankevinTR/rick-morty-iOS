@@ -1,5 +1,5 @@
 //
-//  CharacterRepositoryImpl.swift
+//  SingleCharacterRepositoryImpl.swift
 //  RickAndMorty
 //
 //  Created by Juan Kevin Trujillo on 30/10/23.

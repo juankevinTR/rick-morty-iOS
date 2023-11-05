@@ -1,5 +1,5 @@
 //
-//  CharacterRequestModel.swift
+//  SingleCharacterRequestModel.swift
 //  RickAndMorty
 //
 //  Created by Juan Kevin Trujillo on 30/10/23.
