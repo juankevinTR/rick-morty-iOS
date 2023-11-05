@@ -8,6 +8,11 @@
 import Foundation
 
 struct AllCharactersRequestModel: Codable {
+    let pageNumber: Int?
+
+    init(pageNumber: Int? = nil) {
+        self.pageNumber = pageNumber
+    }
 }
 
 class AllCharactersRequest: APIRequest {
@@ -24,7 +29,13 @@ class AllCharactersRequest: APIRequest {
     }
 
     var urlParameters: [String: String] {
-        return [:]
+        var params: [String: String] = [:]
+
+        if let pageNumber = model.pageNumber {
+            params["page"] = "\(pageNumber)"
+        }
+
+        return params
     }
 
     var httpMethod: HTTPMethod {
