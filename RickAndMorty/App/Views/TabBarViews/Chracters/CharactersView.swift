@@ -37,8 +37,8 @@ struct CharactersView: View {
                             }
                         }
                     }
-                } else if charactersViewModel.loading {
-                    ProgressView()
+//                } else if charactersViewModel.loading {
+//                    ProgressView()
                 } else {
                     Text("view_no_characters_found")
                 }

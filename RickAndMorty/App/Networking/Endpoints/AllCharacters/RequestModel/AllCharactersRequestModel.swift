@@ -20,7 +20,7 @@ class AllCharactersRequest: APIRequest {
     typealias Response = AllCharactersResponse
 
     var urlPathComponent: String {
-        return "character/"
+        return "character"
     }
 
     var urlParameters: [String: String] {
