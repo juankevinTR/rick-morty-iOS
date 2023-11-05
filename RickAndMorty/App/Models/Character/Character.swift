@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - App
 struct Character: Codable, Hashable {
-    let id: Int?
+    let id: Int
     let name: String
     let status: CharacterStatus?
     let species: String
@@ -26,7 +26,7 @@ struct Character: Codable, Hashable {
         response: CharacterResponse
     ) -> Character {
         return Character(
-            id: response.id,
+            id: response.id ?? -1,
             name: response.name ?? "",
             status: CharacterStatus.getWith(response: response.status),
             species: response.species ?? "",
