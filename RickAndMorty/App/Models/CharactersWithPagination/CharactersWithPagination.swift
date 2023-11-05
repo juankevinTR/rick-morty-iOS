@@ -9,20 +9,15 @@ import Foundation
 
 // MARK: - App
 struct CharactersWithPagination: Codable, Hashable {
-    let totalPages: Int?
-    let prevPage: Int?
     let nextPage: Int?
     let characters: [Character]
 
     static func getWith(
         response: CharactersWithPaginationResponse?
     ) -> CharactersWithPagination {
-        let prev: Int? = extractPageNumber(from: response?.info?.prev ?? "")
         let next: Int? = extractPageNumber(from: response?.info?.next ?? "")
 
         return CharactersWithPagination(
-            totalPages: response?.info?.pages,
-            prevPage: prev,
             nextPage: next,
             characters: response?.results?.compactMap({ characterResponse in
                 Character.getWith(response: characterResponse)
