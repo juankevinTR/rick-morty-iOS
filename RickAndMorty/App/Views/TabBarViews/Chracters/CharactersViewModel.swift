@@ -8,7 +8,9 @@
 import Foundation
 
 class CharactersViewModel: ObservableObject {
-//    @Published var loading: Bool = false
+    @Published var loading: Bool = false
+
+    @Published var nextPage: Int?
     @Published var characters: [Character]?
 
     private let allCharactersRepository: AllCharactersRepository
@@ -19,21 +21,52 @@ class CharactersViewModel: ObservableObject {
 }
 
 extension CharactersViewModel {
-    func fetchAllCharacters() {
-//        self.loading = true
+    func fetchFirstCharactersSet() {
+        self.nextPage = 1 // force to fetch the first page
 
-        let allCharactersRM = AllCharactersRequestModel()
+        self.loading = true
 
-        allCharactersRepository.getAllCharacters(requestModel: allCharactersRM) { [weak self] result in
+        self.fetchCharactersSet(pageNumber: nextPage) { [weak self] result in
+            self?.loading = false
+
+            switch result {
+            case .success(let allCharacters):
+                self?.nextPage = allCharacters.nextPage
+                self?.characters = allCharacters.characters
+            case .failure(let error):
+                print("Error fetching first characters set: \(error.localizedDescription)")
+            }
+        }
+    }
+
+    func fetchNextCharactersSet() {
+        guard let nextPage = nextPage else {
+            return
+        }
+
+        self.fetchCharactersSet(pageNumber: nextPage) { [weak self] result in
+            switch result {
+            case .success(let allCharacters):
+                self?.nextPage = allCharacters.nextPage
+
+                // Add the new characters to the showing characters list
+                self?.characters?.append(contentsOf: allCharacters.characters)
+            case .failure(let error):
+                print("Error fetching characters set with page (\(nextPage)): \(error.localizedDescription)")
+            }
+        }
+    }
+}
+
+private extension CharactersViewModel {
+    func fetchCharactersSet(
+        pageNumber: Int?,
+        completion: @escaping (Result<AllCharacters, Error>) -> Void
+    ) {
+        let allCharactersRM = AllCharactersRequestModel(pageNumber: pageNumber)
+        allCharactersRepository.getAllCharacters(requestModel: allCharactersRM) { result in
             DispatchQueue.main.async {
-//                self?.loading = false
-
-                switch result {
-                case .success(let allCharacters):
-                    self?.characters = allCharacters.characters
-                case .failure(let error):
-                    print("Error fetching characters: \(error.localizedDescription)")
-                }
+                completion(result)
             }
         }
     }

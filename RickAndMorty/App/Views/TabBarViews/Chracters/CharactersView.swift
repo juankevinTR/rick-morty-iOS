@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CharactersView: View {
-//    @State private var didOnAppearFinish = false
+    @State private var didOnAppearFinish = false
     @StateObject private var charactersViewModel: CharactersViewModel
 
     init() {
@@ -36,20 +36,26 @@ struct CharactersView: View {
                                 .padding()
                             }
                         }
+
+                        if charactersViewModel.nextPage != nil {
+                            ProgressView()
+                                .onAppear {
+                                    charactersViewModel.fetchNextCharactersSet()
+                                }
+                        }
                     }
-//                } else if charactersViewModel.loading {
-//                    ProgressView()
+                } else if charactersViewModel.loading {
+                    ProgressView()
                 } else {
                     Text("view_no_characters_found")
                 }
             }
             .navigationBarTitle("view_tabbar_characters")
             .onAppear {
-//                if !didOnAppearFinish {
-//                    charactersViewModel.fetchAllCharacters()
-//                    self.didOnAppearFinish = true
-//                }
-                charactersViewModel.fetchAllCharacters()
+                if !didOnAppearFinish {
+                    charactersViewModel.fetchFirstCharactersSet()
+                    self.didOnAppearFinish = true
+                }
             }
         }
     }
