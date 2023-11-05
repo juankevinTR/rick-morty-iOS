@@ -1,5 +1,5 @@
 //
-//  AllCharactersRequestModel.swift
+//  CharactersWithPaginationRequestModel.swift
 //  RickAndMorty
 //
 //  Created by Juan Kevin Trujillo on 4/11/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AllCharactersRequestModel: Codable {
+struct CharactersWithPaginationRequestModel: Codable {
     let pageNumber: Int?
 
     init(pageNumber: Int? = nil) {
@@ -15,14 +15,14 @@ struct AllCharactersRequestModel: Codable {
     }
 }
 
-class AllCharactersRequest: APIRequest {
-    let model: AllCharactersRequestModel
+class CharactersWithPaginationRequest: APIRequest {
+    let model: CharactersWithPaginationRequestModel
 
-    init(model: AllCharactersRequestModel) {
+    init(model: CharactersWithPaginationRequestModel) {
         self.model = model
     }
 
-    typealias Response = AllCharactersResponse
+    typealias Response = CharactersWithPaginationResponse
 
     var urlPathComponent: String {
         return "character"

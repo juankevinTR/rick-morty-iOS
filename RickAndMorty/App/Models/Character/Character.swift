@@ -23,7 +23,7 @@ struct Character: Codable, Hashable {
     let created: String
 
     static func getWith(
-        response: CharacterResponse
+        response: SingleCharacterResponse
     ) -> Character {
         return Character(
             id: response.id ?? -1,
@@ -87,7 +87,7 @@ struct CharacterLocation: Codable, Hashable {
     let url: String
 
     static func getWith(
-        response: CharacterLocationResponse?
+        response: SingleCharacterLocationResponse?
     ) -> CharacterLocation {
         return CharacterLocation(
             name: response?.name ?? "",

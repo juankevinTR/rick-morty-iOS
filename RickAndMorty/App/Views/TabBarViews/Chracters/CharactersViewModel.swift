@@ -13,10 +13,10 @@ class CharactersViewModel: ObservableObject {
     @Published var nextPage: Int?
     @Published var characters: [Character]?
 
-    private let allCharactersRepository: AllCharactersRepository
+    private let charactersWithPaginationRepository: CharactersWithPaginationRepository
 
-    init(allCharactersRepository: AllCharactersRepository) {
-        self.allCharactersRepository = allCharactersRepository
+    init(charactersWithPaginationRepository: CharactersWithPaginationRepository) {
+        self.charactersWithPaginationRepository = charactersWithPaginationRepository
     }
 }
 
@@ -30,9 +30,9 @@ extension CharactersViewModel {
             self?.loading = false
 
             switch result {
-            case .success(let allCharacters):
-                self?.nextPage = allCharacters.nextPage
-                self?.characters = allCharacters.characters
+            case .success(let charactersWP):
+                self?.nextPage = charactersWP.nextPage
+                self?.characters = charactersWP.characters
             case .failure(let error):
                 print("Error fetching first characters set: \(error.localizedDescription)")
             }
@@ -46,11 +46,11 @@ extension CharactersViewModel {
 
         self.fetchCharactersSet(pageNumber: nextPage) { [weak self] result in
             switch result {
-            case .success(let allCharacters):
-                self?.nextPage = allCharacters.nextPage
+            case .success(let charactersWP):
+                self?.nextPage = charactersWP.nextPage
 
                 // Add the new characters to the showing characters list
-                self?.characters?.append(contentsOf: allCharacters.characters)
+                self?.characters?.append(contentsOf: charactersWP.characters)
             case .failure(let error):
                 print("Error fetching characters set with page (\(nextPage)): \(error.localizedDescription)")
             }
@@ -61,10 +61,12 @@ extension CharactersViewModel {
 private extension CharactersViewModel {
     func fetchCharactersSet(
         pageNumber: Int?,
-        completion: @escaping (Result<AllCharacters, Error>) -> Void
+        completion: @escaping (Result<CharactersWithPagination, Error>) -> Void
     ) {
-        let allCharactersRM = AllCharactersRequestModel(pageNumber: pageNumber)
-        allCharactersRepository.getAllCharacters(requestModel: allCharactersRM) { result in
+        let charactersWithPaginationRM = CharactersWithPaginationRequestModel(pageNumber: pageNumber)
+        charactersWithPaginationRepository.getCharactersWithPagination(
+            requestModel: charactersWithPaginationRM
+        ) { result in
             DispatchQueue.main.async {
                 completion(result)
             }

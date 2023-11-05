@@ -1,5 +1,5 @@
 //
-//  AllCharacter.swift
+//  CharactersWithPagination.swift
 //  RickAndMorty
 //
 //  Created by Juan Kevin Trujillo on 4/11/23.
@@ -8,19 +8,19 @@
 import Foundation
 
 // MARK: - App
-struct AllCharacters: Codable, Hashable {
+struct CharactersWithPagination: Codable, Hashable {
     let totalPages: Int?
     let prevPage: Int?
     let nextPage: Int?
     let characters: [Character]
 
     static func getWith(
-        response: AllCharactersResponse?
-    ) -> AllCharacters {
+        response: CharactersWithPaginationResponse?
+    ) -> CharactersWithPagination {
         let prev: Int? = extractPageNumber(from: response?.info?.prev ?? "")
         let next: Int? = extractPageNumber(from: response?.info?.next ?? "")
 
-        return AllCharacters(
+        return CharactersWithPagination(
             totalPages: response?.info?.pages,
             prevPage: prev,
             nextPage: next,

@@ -18,7 +18,7 @@ class MultipleCharactersRequest: APIRequest {
         self.model = model
     }
 
-    typealias Response = [CharacterResponse]
+    typealias Response = [SingleCharacterResponse]
 
     var urlPathComponent: String {
         return "character/\(model.characterIds)"

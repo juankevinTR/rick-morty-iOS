@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CharacterRepositoryImpl {
+class SingleCharacterRepositoryImpl {
     private let networkService: NetworkService
 
     public init(networkService: NetworkService) {
@@ -15,12 +15,12 @@ class CharacterRepositoryImpl {
     }
 }
 
-extension CharacterRepositoryImpl: CharacterRepository {
-    func getCharacter(
-        requestModel: CharacterRequestModel,
+extension SingleCharacterRepositoryImpl: SingleCharacterRepository {
+    func getSingleCharacter(
+        requestModel: SingleCharacterRequestModel,
         completion: @escaping (Result<Character, Error>) -> Void
     ) {
-        let request = CharacterRequest(model: requestModel)
+        let request = SingleCharacterRequest(model: requestModel)
 
         networkService.executeRequest(request: request) { result in
             switch result {
