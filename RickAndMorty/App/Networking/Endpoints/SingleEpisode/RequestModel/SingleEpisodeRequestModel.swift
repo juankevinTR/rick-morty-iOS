@@ -36,4 +36,3 @@ class SingleEpisodeRequest: APIRequest {
         return [:]
     }
 }
-
