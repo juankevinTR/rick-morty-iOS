@@ -30,6 +30,13 @@ struct TabBarView: View {
                     Text("view_tabbar_episodes")
                 }
                 .tag(2)
+
+            EpisodeDetailView(episode: Episode.getMockOriginalData())
+                .tabItem {
+                    Image(systemName: "film.fill")
+                    Text("view_tabbar_episodes")
+                }
+                .tag(2)
         }
     }
 }

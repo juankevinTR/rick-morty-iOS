@@ -14,7 +14,7 @@ struct Episode: Codable, Hashable {
     let airDate: String
     let seasonNumber: Int?
     let episodeNumber: Int?
-    let characters: [Int]? // Better the ids for future searching
+    let characterIds: [Int]? // Better the ids for future searching
     let url: String
     let created: String
 
@@ -24,10 +24,10 @@ struct Episode: Codable, Hashable {
         return Episode(
             id: response.id ?? -1,
             name: response.name ?? "",
-            airDate: response.airDate ?? "", 
+            airDate: response.airDate ?? "",
             seasonNumber: getSeasonNumber(from: response.episode),
             episodeNumber: getEpisodeNumber(from: response.episode),
-            characters: response.characters?.compactMap({ characterURL in
+            characterIds: response.characters?.compactMap({ characterURL in
                 self.extractCharacterId(from: characterURL)
             }),
             url: response.url ?? "",
@@ -72,10 +72,10 @@ extension Episode {
         return Episode(
             id: 0,
             name: "Mock Episode",
-            airDate: "", 
+            airDate: "",
             seasonNumber: 1,
             episodeNumber: 1,
-            characters: [1, 5, 8, 10, 12, 16],
+            characterIds: [1, 5, 8, 10, 12, 16],
             url: "https://www.linkedin.com/in/juankevintrujillo/",
             created: "1992-09-21T00:00:00.000Z"
         )
@@ -85,10 +85,10 @@ extension Episode {
         return Episode(
             id: 28,
             name: "The Ricklantis Mixup",
-            airDate: "September 10, 2017", 
+            airDate: "September 10, 2017",
             seasonNumber: 3,
             episodeNumber: 7,
-            characters: [1, 2],
+            characterIds: [1, 2],
             url: "https://rickandmortyapi.com/api/episode/28",
             created: "2017-11-10T12:56:36.618Z"
         )
