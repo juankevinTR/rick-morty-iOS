@@ -46,6 +46,8 @@
 		8BC8B9AC2AF8F45000CE77DB /* EpisodesWithPaginationRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC8B9AB2AF8F45000CE77DB /* EpisodesWithPaginationRequestModel.swift */; };
 		8BC8B9AF2AF8F64900CE77DB /* EpisodesWithPaginationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC8B9AE2AF8F64900CE77DB /* EpisodesWithPaginationResponseModel.swift */; };
 		8BC8B9B22AF8F6BE00CE77DB /* EpisodesWithPagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC8B9B12AF8F6BE00CE77DB /* EpisodesWithPagination.swift */; };
+		8BC8B9B42AF8F89900CE77DB /* EpisodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC8B9B32AF8F89900CE77DB /* EpisodesViewModel.swift */; };
+		8BC8B9B62AF8F9F700CE77DB /* EpisodesWithPaginationRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC8B9B52AF8F9F700CE77DB /* EpisodesWithPaginationRepositoryImpl.swift */; };
 		8BE5B12F2AEF117E009B74BF /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5B12E2AEF117E009B74BF /* APIRequest.swift */; };
 		8BE5B1352AEF4145009B74BF /* SingleCharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5B1342AEF4145009B74BF /* SingleCharacterRepository.swift */; };
 		8BE5B1372AEF415E009B74BF /* SingleCharacterRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5B1362AEF415E009B74BF /* SingleCharacterRepositoryImpl.swift */; };
@@ -117,6 +119,8 @@
 		8BC8B9AB2AF8F45000CE77DB /* EpisodesWithPaginationRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesWithPaginationRequestModel.swift; sourceTree = "<group>"; };
 		8BC8B9AE2AF8F64900CE77DB /* EpisodesWithPaginationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesWithPaginationResponseModel.swift; sourceTree = "<group>"; };
 		8BC8B9B12AF8F6BE00CE77DB /* EpisodesWithPagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesWithPagination.swift; sourceTree = "<group>"; };
+		8BC8B9B32AF8F89900CE77DB /* EpisodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewModel.swift; sourceTree = "<group>"; };
+		8BC8B9B52AF8F9F700CE77DB /* EpisodesWithPaginationRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesWithPaginationRepositoryImpl.swift; sourceTree = "<group>"; };
 		8BE5B12E2AEF117E009B74BF /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		8BE5B1342AEF4145009B74BF /* SingleCharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCharacterRepository.swift; sourceTree = "<group>"; };
 		8BE5B1362AEF415E009B74BF /* SingleCharacterRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCharacterRepositoryImpl.swift; sourceTree = "<group>"; };
@@ -282,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				8B8449A22AF157CE00E5BF2D /* EpisodesView.swift */,
+				8BC8B9B32AF8F89900CE77DB /* EpisodesViewModel.swift */,
 			);
 			path = Episodes;
 			sourceTree = "<group>";
@@ -457,6 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				8BC8B9A82AF8F28300CE77DB /* EpisodesWithPaginationRepository.swift */,
+				8BC8B9B52AF8F9F700CE77DB /* EpisodesWithPaginationRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -729,12 +735,14 @@
 				8B8449A52AF157E900E5BF2D /* CharactersView.swift in Sources */,
 				8B51B7E12A70830100B3B8F8 /* RickAndMortyApp.swift in Sources */,
 				8BF62A032AF10BB20076DDC5 /* CharacterCardView.swift in Sources */,
+				8BC8B9B62AF8F9F700CE77DB /* EpisodesWithPaginationRepositoryImpl.swift in Sources */,
 				8BC8B9AF2AF8F64900CE77DB /* EpisodesWithPaginationResponseModel.swift in Sources */,
 				8BC8B9982AF84F2D00CE77DB /* SingleEpisodeRepositoryImpl.swift in Sources */,
 				8B8449C42AF6725F00E5BF2D /* CharacterDetailViewModel.swift in Sources */,
 				8BE5B1352AEF4145009B74BF /* SingleCharacterRepository.swift in Sources */,
 				8BC8B99E2AF84FFE00CE77DB /* SingleEpisodeResponse.swift in Sources */,
 				8B84499F2AF1568500E5BF2D /* HomeView.swift in Sources */,
+				8BC8B9B42AF8F89900CE77DB /* EpisodesViewModel.swift in Sources */,
 				8B8449B42AF1625A00E5BF2D /* CharacterDetailView.swift in Sources */,
 				8B8449AF2AF15A2E00E5BF2D /* MultipleCharactersRepositoryImpl.swift in Sources */,
 				8B8449C02AF6443900E5BF2D /* ImageLoader.swift in Sources */,
