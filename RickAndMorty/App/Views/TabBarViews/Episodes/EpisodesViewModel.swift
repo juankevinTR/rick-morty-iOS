@@ -49,7 +49,7 @@ extension EpisodesViewModel {
             case .success(let episodesWP):
                 self?.nextPage = episodesWP.nextPage
 
-                // Add the new characters to the showing characters list
+                // Add the new episodes to the showing episodes list
                 self?.episodes?.append(contentsOf: episodesWP.episodes)
             case .failure(let error):
                 print("Error fetching episodes set with page (\(nextPage)): \(error.localizedDescription)")
