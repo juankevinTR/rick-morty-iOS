@@ -45,3 +45,18 @@ private extension Episode {
         return nil
     }
 }
+
+// MARK: - Mock
+extension Episode {
+    static func getMock() -> Episode {
+        return Episode(
+            id: 0,
+            name: "Mock Episode",
+            airDate: "",
+            episode: "ME01",
+            characters: [1, 5, 8, 10, 12, 16],
+            url: "https://www.linkedin.com/in/juankevintrujillo/",
+            created: "1992-09-21T00:00:00.000Z"
+        )
+    }
+}
