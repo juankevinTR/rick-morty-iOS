@@ -28,18 +28,13 @@ struct EpisodesView: View {
                 if let episodes = episodesViewModel.episodes {
                     List {
                         ForEach(episodes, id: \.self) { episode in
-                            HStack {
-                                Text("[\(episode.id)]")
-                                Text("\(episode.name)")
+                            NavigationLink(destination: EpisodeDetailView(episode: episode)) {
+                                HStack {
+                                    Text("[\(episode.id)]")
+                                    Text("\(episode.name)")
+                                }
+                                .padding()
                             }
-                            .padding()
-//                            NavigationLink(destination: EpisodeDetailView(episode: episode)) {
-//                                HStack {
-//                                    Text("[\(episode.id)]")
-//                                    Text("\(episode.name)")
-//                                }
-//                                .padding()
-//                            }
                         }
 
                         if episodesViewModel.nextPage != nil {
