@@ -25,6 +25,11 @@
 "character_status_dead" = "Fallecido";
 "character_status_unknown" = "Desconocido";
 
+"episode_detail_title %@" = "Título: %1$@";
+"episode_detail_season %@" = "Temporada: %1$@";
+"episode_detail_episode %@" = "Episodio: %1$@";
+"episode_detail_air_date %@" = "Fecha de emisión: %1$@";
+
 "network_service_decoding_error" = "Error de decodificación";
 "network_service_invalid_response" = "Respuesta no válida";
 "network_service_invalid_url" = "URL no válida";

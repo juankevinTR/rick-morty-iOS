@@ -23,7 +23,7 @@ struct Character: Codable, Hashable {
     let created: String
 
     static func getWith(
-        response: CharacterResponse
+        response: SingleCharacterResponse
     ) -> Character {
         return Character(
             id: response.id ?? -1,
@@ -87,7 +87,7 @@ struct CharacterLocation: Codable, Hashable {
     let url: String
 
     static func getWith(
-        response: CharacterLocationResponse?
+        response: SingleCharacterLocationResponse?
     ) -> CharacterLocation {
         return CharacterLocation(
             name: response?.name ?? "",
@@ -96,8 +96,19 @@ struct CharacterLocation: Codable, Hashable {
     }
 }
 
-// MARK: - Mock
+// MARK: - Public extension
 extension Character {
+
+    // MARK: - Extract functions
+    static func extractCharacterId(from urlString: String) -> Int? {
+        if let characterIdRange = urlString.range(of: "/character/") {
+            let characterIdSubstring = urlString.suffix(from: characterIdRange.upperBound)
+            return Int(characterIdSubstring)
+        }
+        return nil
+    }
+
+    // MARK: - Mocks
     static func getMock() -> Character {
         return Character(
             id: 0,

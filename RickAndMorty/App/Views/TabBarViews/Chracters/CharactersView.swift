@@ -14,10 +14,10 @@ struct CharactersView: View {
     init() {
         let networkService: NetworkService = NetworkServiceImpl()
 
-        let allCharactersRepository = AllCharactersRepositoryImpl(networkService: networkService)
+        let charactersWithPaginationRepository = CharactersWithPaginationRepositoryImpl(networkService: networkService)
         self._charactersViewModel = StateObject(
             wrappedValue: CharactersViewModel(
-                allCharactersRepository: allCharactersRepository
+                charactersWithPaginationRepository: charactersWithPaginationRepository
             )
         )
     }

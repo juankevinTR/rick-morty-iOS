@@ -28,13 +28,13 @@ extension HomeViewModel {
         )
 
         multipleCharactersRepository.getCharacters(
-            requestModel: multipleCharactersRM) { result in
+            requestModel: multipleCharactersRM) { [weak self] result in
                 DispatchQueue.main.async {
-                    self.loading = false
+                    self?.loading = false
 
                     switch result {
                     case .success(let characters):
-                        self.characters = characters
+                        self?.characters = characters
                     case .failure(let error):
                         print("Error fetching characters: \(error.localizedDescription)")
                     }

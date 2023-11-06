@@ -1,5 +1,5 @@
 //
-//  CharacterRequestModel.swift
+//  SingleCharacterRequestModel.swift
 //  RickAndMorty
 //
 //  Created by Juan Kevin Trujillo on 30/10/23.
@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct CharacterRequestModel: Codable {
+struct SingleCharacterRequestModel: Codable {
     let characterId: Int
 }
 
-class CharacterRequest: APIRequest {
-    let model: CharacterRequestModel
+class SingleCharacterRequest: APIRequest {
+    let model: SingleCharacterRequestModel
 
-    init(model: CharacterRequestModel) {
+    init(model: SingleCharacterRequestModel) {
         self.model = model
     }
 
-    typealias Response = CharacterResponse
+    typealias Response = SingleCharacterResponse
 
     var urlPathComponent: String {
         return "character/\(model.characterId)"

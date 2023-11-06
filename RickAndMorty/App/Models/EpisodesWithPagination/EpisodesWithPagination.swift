@@ -1,31 +1,25 @@
 //
-//  AllCharacter.swift
+//  EpisodesWithPagination.swift
 //  RickAndMorty
 //
-//  Created by Juan Kevin Trujillo on 4/11/23.
+//  Created by Juan Kevin Trujillo on 6/11/23.
 //
 
 import Foundation
 
-// MARK: - App
-struct AllCharacters: Codable, Hashable {
-    let totalPages: Int?
-    let prevPage: Int?
+struct EpisodesWithPagination: Codable, Hashable {
     let nextPage: Int?
-    let characters: [Character]
+    let episodes: [Episode]
 
     static func getWith(
-        response: AllCharactersResponse?
-    ) -> AllCharacters {
-        let prev: Int? = extractPageNumber(from: response?.info?.prev ?? "")
+        response: EpisodesWithPaginationResponse?
+    ) -> EpisodesWithPagination {
         let next: Int? = extractPageNumber(from: response?.info?.next ?? "")
 
-        return AllCharacters(
-            totalPages: response?.info?.pages,
-            prevPage: prev,
+        return EpisodesWithPagination(
             nextPage: next,
-            characters: response?.results?.compactMap({ characterResponse in
-                Character.getWith(response: characterResponse)
+            episodes: response?.results?.compactMap({ episodeResponse in
+                Episode.getWith(response: episodeResponse)
             }) ?? []
         )
     }

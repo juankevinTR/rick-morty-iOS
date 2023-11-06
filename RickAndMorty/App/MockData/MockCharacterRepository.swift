@@ -8,14 +8,14 @@
 import Foundation
 
 // Mock Character Repository
-struct MockCharacterRepository: CharacterRepository {
-    func getCharacter(
-        requestModel: CharacterRequestModel,
+struct MockSingleCharacterRepository: SingleCharacterRepository {
+    func getSingleCharacter(
+        requestModel: SingleCharacterRequestModel,
         completion: @escaping (Result<Character, Error>) -> Void
     ) {
         completion(
             .success(
-                Character.getWith(response: CharacterResponse.getMock())
+                Character.getWith(response: SingleCharacterResponse.getMock())
             )
         )
     }
