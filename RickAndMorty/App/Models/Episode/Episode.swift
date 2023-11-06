@@ -25,10 +25,10 @@ struct Episode: Codable, Hashable {
             id: response.id ?? -1,
             name: response.name ?? "",
             airDate: response.airDate ?? "",
-            seasonNumber: getSeasonNumber(from: response.episode),
-            episodeNumber: getEpisodeNumber(from: response.episode),
+            seasonNumber: extractSeasonNumber(from: response.episode),
+            episodeNumber: extractEpisodeNumber(from: response.episode),
             characterIds: response.characters?.compactMap({ characterURL in
-                self.extractCharacterId(from: characterURL)
+                Character.extractCharacterId(from: characterURL)
             }),
             url: response.url ?? "",
             created: response.created ?? ""
@@ -36,38 +36,19 @@ struct Episode: Codable, Hashable {
     }
 }
 
-private extension Episode {
-    private static func getSeasonNumber(from input: String?) -> Int? {
-        guard let input = input, let range = input.range(of: "S") else {
-            return nil
-        }
-        let startIndex = input.index(after: range.upperBound)
-        let seasonNumber = input[startIndex...]
-        return Int(seasonNumber)
-    }
+// MARK: - Public extension
+extension Episode {
 
-    private static func getEpisodeNumber(from input: String?) -> Int? {
-        guard let input = input, let range = input.range(of: "E") else {
-            return nil
-        }
-        let startIndex = input.index(after: range.upperBound)
-        let episodeNumber = input[startIndex...]
-        return Int(episodeNumber)
-    }
-
-    private static func extractCharacterId(from urlString: String) -> Int? {
-        if let characterIdRange = urlString.range(of: "/character/") {
-            let characterIdSubstring = urlString.suffix(from: characterIdRange.upperBound)
-            if let characterId = Int(characterIdSubstring) {
-                return characterId
-            }
+    // MARK: - Extract function
+    static func extractCharacterId(from urlString: String) -> Int? {
+        if let episodeIdRange = urlString.range(of: "/episode/") {
+            let episodeIdSubstring = urlString.suffix(from: episodeIdRange.upperBound)
+            return Int(episodeIdSubstring)
         }
         return nil
     }
-}
 
-// MARK: - Mock
-extension Episode {
+    // MARK: - Mocks
     static func getMock() -> Episode {
         return Episode(
             id: 0,
@@ -92,5 +73,30 @@ extension Episode {
             url: "https://rickandmortyapi.com/api/episode/28",
             created: "2017-11-10T12:56:36.618Z"
         )
+    }
+}
+
+// MARK: - Private extension
+private extension Episode {
+    static func extractSeasonNumber(from input: String?) -> Int? {
+        guard let input = input, let range = input.range(of: "S") else {
+            return nil
+        }
+        let startIndex = input.index(after: range.upperBound)
+
+        // Find the end index by searching for the next non-numeric character
+        let endIndex = input[startIndex...].firstIndex { !$0.isNumber } ?? input.endIndex
+
+        let seasonNumber = input[startIndex..<endIndex]
+        return Int(seasonNumber)
+    }
+
+    static func extractEpisodeNumber(from input: String?) -> Int? {
+        guard let input = input, let range = input.range(of: "E") else {
+            return nil
+        }
+        let startIndex = input.index(after: range.upperBound)
+        let episodeNumber = input[startIndex...]
+        return Int(episodeNumber)
     }
 }
