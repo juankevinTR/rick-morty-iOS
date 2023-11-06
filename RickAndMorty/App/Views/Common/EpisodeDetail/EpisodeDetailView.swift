@@ -40,10 +40,22 @@ struct EpisodeDetailView: View {
                 ScrollView {
                     HStack {
                         VStack(alignment: .leading) {
-                            Label("Name: \(viewModel.name)", systemImage: "film.fill")
-                            Label("Season: \(viewModel.seasonNumber)", systemImage: "list.bullet.rectangle.fill")
-                            Label("Episode: \(viewModel.episodeNumber)", systemImage: "play.rectangle.fill")
-                            Label("Air date: \(viewModel.airDate)", systemImage: "calendar.badge.plus")
+                            Label(
+                                "episode_detail_title \(viewModel.name)",
+                                systemImage: "film.fill"
+                            )
+                            Label(
+                                "episode_detail_season \(viewModel.seasonNumber)",
+                                systemImage: "list.bullet.rectangle.fill"
+                            )
+                            Label(
+                                "episode_detail_episode \(viewModel.episodeNumber)", 
+                                systemImage: "play.rectangle.fill"
+                            )
+                            Label(
+                                "episode_detail_air_date \(viewModel.airDate)",
+                                systemImage: "calendar.badge.plus"
+                            )
                         }
 
                         Spacer()

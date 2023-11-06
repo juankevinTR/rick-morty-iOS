@@ -25,6 +25,11 @@
 "character_status_dead" = "Dead";
 "character_status_unknown" = "Unknown";
 
+"episode_detail_title %@" = "Title: %1$@";
+"episode_detail_season %@" = "Season: %1$@";
+"episode_detail_episode %@" = "Episode: %1$@";
+"episode_detail_air_date %@" = "Air date: %1$@";
+
 "network_service_decoding_error" = "Decoding error";
 "network_service_invalid_response" = "Invalid response";
 "network_service_invalid_url" = "Invalid URL";
@@ -35,4 +40,3 @@
 "view_tabbar_episodes" = "Episodes";
 
 "view_no_characters_found" = "Any character was found";
-
