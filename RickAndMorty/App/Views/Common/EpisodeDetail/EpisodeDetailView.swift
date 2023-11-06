@@ -49,7 +49,7 @@ struct EpisodeDetailView: View {
                                 systemImage: "list.bullet.rectangle.fill"
                             )
                             Label(
-                                "episode_detail_episode \(viewModel.episodeNumber)", 
+                                "episode_detail_episode \(viewModel.episodeNumber)",
                                 systemImage: "play.rectangle.fill"
                             )
                             Label(

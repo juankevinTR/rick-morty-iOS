@@ -98,7 +98,7 @@ struct CharacterLocation: Codable, Hashable {
 
 // MARK: - Public extension
 extension Character {
-    
+
     // MARK: - Extract functions
     static func extractCharacterId(from urlString: String) -> Int? {
         if let characterIdRange = urlString.range(of: "/character/") {

@@ -27,8 +27,8 @@ class EpisodeDetailViewModel: ObservableObject {
         self.id = episode.id
         self.name = episode.name
         self.airDate = episode.airDate
-        self.seasonNumber = String(describing: episode.seasonNumber)
-        self.episodeNumber = String(describing: episode.episodeNumber)
+        self.seasonNumber = episode.seasonNumber
+        self.episodeNumber = episode.episodeNumber
         self.characters = []
 
         self.multipleCharactersRepository = multipleCharactersRepository

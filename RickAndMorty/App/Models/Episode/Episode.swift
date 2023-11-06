@@ -12,8 +12,8 @@ struct Episode: Codable, Hashable {
     let id: Int
     let name: String
     let airDate: String
-    let seasonNumber: Int?
-    let episodeNumber: Int?
+    let seasonNumber: String
+    let episodeNumber: String
     let characterIds: [Int]? // Better the ids for future searching
     let url: String
     let created: String
@@ -25,8 +25,8 @@ struct Episode: Codable, Hashable {
             id: response.id ?? -1,
             name: response.name ?? "",
             airDate: response.airDate ?? "",
-            seasonNumber: extractSeasonNumber(from: response.episode),
-            episodeNumber: extractEpisodeNumber(from: response.episode),
+            seasonNumber: extractSeasonNumber(from: response.episode) ?? "",
+            episodeNumber: extractEpisodeNumber(from: response.episode) ?? "",
             characterIds: response.characters?.compactMap({ characterURL in
                 Character.extractCharacterId(from: characterURL)
             }),
@@ -54,8 +54,8 @@ extension Episode {
             id: 0,
             name: "Mock Episode",
             airDate: "",
-            seasonNumber: 1,
-            episodeNumber: 1,
+            seasonNumber: "1",
+            episodeNumber: "1",
             characterIds: [1, 5, 8, 10, 12, 16],
             url: "https://www.linkedin.com/in/juankevintrujillo/",
             created: "1992-09-21T00:00:00.000Z"
@@ -67,8 +67,8 @@ extension Episode {
             id: 28,
             name: "The Ricklantis Mixup",
             airDate: "September 10, 2017",
-            seasonNumber: 3,
-            episodeNumber: 7,
+            seasonNumber: "3",
+            episodeNumber: "7",
             characterIds: [1, 2],
             url: "https://rickandmortyapi.com/api/episode/28",
             created: "2017-11-10T12:56:36.618Z"
@@ -78,7 +78,7 @@ extension Episode {
 
 // MARK: - Private extension
 private extension Episode {
-    static func extractSeasonNumber(from input: String?) -> Int? {
+    static func extractSeasonNumber(from input: String?) -> String? {
         guard let input = input, let range = input.range(of: "S") else {
             return nil
         }
@@ -88,15 +88,15 @@ private extension Episode {
         let endIndex = input[startIndex...].firstIndex { !$0.isNumber } ?? input.endIndex
 
         let seasonNumber = input[startIndex..<endIndex]
-        return Int(seasonNumber)
+        return String(seasonNumber)
     }
 
-    static func extractEpisodeNumber(from input: String?) -> Int? {
+    static func extractEpisodeNumber(from input: String?) -> String? {
         guard let input = input, let range = input.range(of: "E") else {
             return nil
         }
         let startIndex = input.index(after: range.upperBound)
         let episodeNumber = input[startIndex...]
-        return Int(episodeNumber)
+        return String(episodeNumber)
     }
 }
