@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B1B39A72B01FA23004C6949 /* CircleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B39A62B01FA23004C6949 /* CircleTextView.swift */; };
 		8B51B7E12A70830100B3B8F8 /* RickAndMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51B7E02A70830100B3B8F8 /* RickAndMortyApp.swift */; };
 		8B51B7E32A70830100B3B8F8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51B7E22A70830100B3B8F8 /* MainView.swift */; };
 		8B51B7E52A70830300B3B8F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B51B7E42A70830300B3B8F8 /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B1B39A62B01FA23004C6949 /* CircleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTextView.swift; sourceTree = "<group>"; };
 		8B51B7DD2A70830100B3B8F8 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B51B7E02A70830100B3B8F8 /* RickAndMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyApp.swift; sourceTree = "<group>"; };
 		8B51B7E22A70830100B3B8F8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B1B39A82B01FDDA004C6949 /* CircleText */ = {
+			isa = PBXGroup;
+			children = (
+				8B1B39A62B01FA23004C6949 /* CircleTextView.swift */,
+			);
+			path = CircleText;
+			sourceTree = "<group>";
+		};
 		8B51B7D42A70830100B3B8F8 = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +597,7 @@
 			isa = PBXGroup;
 			children = (
 				8B8449BD2AF1807E00E5BF2D /* CharacterCard */,
+				8B1B39A82B01FDDA004C6949 /* CircleText */,
 				8B8449B22AF1624500E5BF2D /* CharacterDetail */,
 				8BC8B9BC2AF918D600CE77DB /* CharacterImage */,
 				8BC8B9B72AF8FBEA00CE77DB /* EpisodeDetail */,
@@ -756,6 +767,7 @@
 				8B8449CD2AF68D5C00E5BF2D /* CharactersWithPaginationRepositoryImpl.swift in Sources */,
 				8BC8B9C02AF918F300CE77DB /* CharacterImageView.swift in Sources */,
 				8BF62A052AF10C280076DDC5 /* CharacterCardViewModel.swift in Sources */,
+				8B1B39A72B01FA23004C6949 /* CircleTextView.swift in Sources */,
 				8BA826512AEF52580010989B /* NetworkServiceImpl.swift in Sources */,
 				8B51B7E32A70830100B3B8F8 /* MainView.swift in Sources */,
 				8B8449AD2AF159C300E5BF2D /* MultipleCharactersRequestModel.swift in Sources */,

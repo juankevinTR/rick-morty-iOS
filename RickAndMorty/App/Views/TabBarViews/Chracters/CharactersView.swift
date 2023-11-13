@@ -30,7 +30,11 @@ struct CharactersView: View {
                         ForEach(characters, id: \.self) { character in
                             NavigationLink(destination: CharacterDetailView(character: character)) {
                                 HStack {
-                                    Text("[\(character.id)]")
+                                    CircleTextView(
+                                        color: character.status?.color ?? Color("CharacterStatusUnknownColor"),
+                                        text: "\(character.id)"
+                                    )
+                                        .frame(maxWidth: 45, maxHeight: 45)
                                     Text("\(character.name)")
                                 }
                                 .padding()
