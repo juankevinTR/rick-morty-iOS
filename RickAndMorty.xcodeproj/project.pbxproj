@@ -597,9 +597,9 @@
 			isa = PBXGroup;
 			children = (
 				8B8449BD2AF1807E00E5BF2D /* CharacterCard */,
-				8B1B39A82B01FDDA004C6949 /* CircleText */,
 				8B8449B22AF1624500E5BF2D /* CharacterDetail */,
 				8BC8B9BC2AF918D600CE77DB /* CharacterImage */,
+				8B1B39A82B01FDDA004C6949 /* CircleText */,
 				8BC8B9B72AF8FBEA00CE77DB /* EpisodeDetail */,
 			);
 			path = Common;

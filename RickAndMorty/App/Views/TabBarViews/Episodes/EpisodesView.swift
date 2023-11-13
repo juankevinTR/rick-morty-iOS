@@ -30,7 +30,11 @@ struct EpisodesView: View {
                         ForEach(episodes, id: \.self) { episode in
                             NavigationLink(destination: EpisodeDetailView(episode: episode)) {
                                 HStack {
-                                    Text("[\(episode.id)]")
+                                    CircleTextView(
+                                        color: Color("AppGrayColor").opacity(0.5),
+                                        text: "\(episode.id)"
+                                    )
+                                        .frame(maxWidth: 45, maxHeight: 45)
                                     Text("\(episode.name)")
                                 }
                                 .padding()
