@@ -8,5 +8,8 @@
 import Foundation
 
 protocol SingleEpisodeRepository {
-    func getSingleEpisode(requestModel: SingleEpisodeRequestModel, completion: @escaping(Result<Episode, Error>) -> Void)
+    func getSingleEpisode(
+        requestModel: SingleEpisodeRequestModel,
+        completion: @escaping(Result<Episode, Error>) -> Void
+    )
 }

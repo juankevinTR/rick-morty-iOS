@@ -8,5 +8,8 @@
 import Foundation
 
 protocol SingleCharacterRepository {
-    func getSingleCharacter(requestModel: SingleCharacterRequestModel, completion: @escaping(Result<Character, Error>) -> Void)
+    func getSingleCharacter(
+        requestModel: SingleCharacterRequestModel,
+        completion: @escaping(Result<Character, Error>) -> Void
+    )
 }
