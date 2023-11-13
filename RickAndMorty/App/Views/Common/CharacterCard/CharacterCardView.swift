@@ -33,6 +33,7 @@ struct CharacterCardView: View {
             VStack(alignment: .leading, spacing: 8) {
                 Text(viewModel.name)
                     .font(.headline)
+                    .foregroundStyle(Color("AppWhiteColor"))
 
                 HStack(spacing: 5) {
                     Circle()
@@ -40,10 +41,15 @@ struct CharacterCardView: View {
                         .frame(width: 10, height: 10)
                     Text("\(viewModel.status.localizedTitle) - \(viewModel.species)")
                         .font(.subheadline)
+                        .foregroundStyle(Color("AppWhiteColor"))
                 }
             }
 
             Spacer()
+
+            Rectangle()
+                .fill(viewModel.status.color)
+                .frame(width: 10, height: 100)
         }
         .background(
             Color("CharacterCardBackgroundColor")
@@ -56,4 +62,5 @@ struct CharacterCardView: View {
 
 #Preview {
     CharacterCardView(character: Character.getMock())
+        .padding()
 }
