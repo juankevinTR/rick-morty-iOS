@@ -10,8 +10,6 @@ import SwiftUI
 struct EpisodeDetailView: View {
     @StateObject private var viewModel: EpisodeDetailViewModel
 
-    let horizontalPadding: CGFloat = 10
-
     init(episode: Episode) {
         let networkService: NetworkService = NetworkServiceImpl()
 
@@ -92,7 +90,7 @@ struct EpisodeDetailView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
-        .padding([.leading, .trailing], horizontalPadding)
+        .padding()
         .onAppear {
             viewModel.fetchCharacters()
         }
