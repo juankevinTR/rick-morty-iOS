@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 // MARK: - App
 struct Character: Codable, Hashable {
@@ -53,11 +54,19 @@ enum CharacterStatus: String, Codable, Hashable {
         return CharacterStatus(rawValue: response ?? "")
     }
 
-    func getLocalized() -> String {
+    var localizedTitle: String {
         switch self {
         case .alive: return NSLocalizedString("character_status_alive", comment: "")
         case .dead: return NSLocalizedString("character_status_dead", comment: "")
         case .unknown: return NSLocalizedString("character_status_unknown", comment: "")
+        }
+    }
+
+    var color: Color {
+        switch self {
+        case .alive: return Color("CharacterStatusAliveColor") // #55CC44
+        case .dead: return Color("CharacterStatusDeadColor") // #D63D2E
+        case .unknown: return Color("CharacterStatusUnknownColor") // #9E9E9E
         }
     }
 }
@@ -73,7 +82,7 @@ enum CharacterGender: String, Codable, Hashable {
         return CharacterGender(rawValue: response ?? "")
     }
 
-    func getLocalized() -> String {
+    var localizedTitle: String {
         switch self {
         case .female: return NSLocalizedString("character_gender_female", comment: "")
         case .male: return NSLocalizedString("character_gender_male", comment: "")
