@@ -38,10 +38,10 @@ struct CharacterDetailView: View {
                         .cornerRadius(10)
                 }
 
-                Text("character_detail_description_status \(viewModel.status.getLocalized())")
+                Text("character_detail_description_status \(viewModel.status.localizedTitle)")
                 Text("character_detail_description_species \(viewModel.species)")
                 Text("character_detail_description_type \(viewModel.type)")
-                Text("character_detail_description_gender \(viewModel.gender.getLocalized())")
+                Text("character_detail_description_gender \(viewModel.gender.localizedTitle)")
                 Text("character_detail_description_origin_location \(viewModel.originName)")
                 Text("character_detail_description_last_location \(viewModel.lastLocationName)")
             }

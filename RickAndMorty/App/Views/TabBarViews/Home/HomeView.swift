@@ -50,6 +50,10 @@ struct HomeView: View {
                     self.didOnAppearFinish = true
                 }
             }
+            .refreshable {
+                // Pull-to-refresh to get another random characters
+                homeViewModel.fetchRandomCharacters()
+            }
         }
     }
 }

@@ -30,7 +30,7 @@ struct EpisodeDetailView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             HStack {
-                Text("Information")
+                Text("episode_detail_title_info")
                     .font(.title2)
                     .fontWeight(.bold)
                 Spacer()
@@ -64,7 +64,7 @@ struct EpisodeDetailView: View {
             }
 
             HStack {
-                Text("view_tabbar_characters")
+                Text("episode_detail_title_characters")
                     .font(.title2)
                     .fontWeight(.bold)
                 Spacer()

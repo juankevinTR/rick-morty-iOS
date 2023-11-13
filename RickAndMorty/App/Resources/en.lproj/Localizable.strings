@@ -25,6 +25,8 @@
 "character_status_dead" = "Dead";
 "character_status_unknown" = "Unknown";
 
+"episode_detail_title_info" = "Information";
+"episode_detail_title_characters" = "Characters";
 "episode_detail_title %@" = "Title: %1$@";
 "episode_detail_season %@" = "Season: %1$@";
 "episode_detail_episode %@" = "Episode: %1$@";

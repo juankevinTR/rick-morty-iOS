@@ -36,9 +36,9 @@ struct CharacterCardView: View {
 
                 HStack(spacing: 5) {
                     Circle()
-                        .fill(.blue)
+                        .fill(viewModel.status.color)
                         .frame(width: 10, height: 10)
-                    Text("\(viewModel.status.getLocalized()) - \(viewModel.species)")
+                    Text("\(viewModel.status.localizedTitle) - \(viewModel.species)")
                         .font(.subheadline)
                 }
             }
