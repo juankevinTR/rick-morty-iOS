@@ -10,7 +10,7 @@ import SwiftUI
 struct CharacterDetailView: View {
     @StateObject private var viewModel: CharacterDetailViewModel
 
-    let horizontalPadding: CGFloat = 10
+    let horizontalPadding: CGFloat = 15
 
     init(character: Character) {
         self._viewModel = StateObject(
@@ -21,36 +21,73 @@ struct CharacterDetailView: View {
     }
 
     var body: some View {
-        GeometryReader { geometry in
-            VStack(alignment: .leading) {
-                // Calculate the maximum width for the image
-                let maxWidth = min(geometry.size.width - 2 * horizontalPadding, geometry.size.height)
-
+        ScrollView(.vertical, showsIndicators: false) {
+            HStack {
                 if !viewModel.loadingImage {
                     viewModel.image
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: maxWidth, height: maxWidth)
-                        .cornerRadius(10)
                 } else {
                     ProgressView()
-                        .frame(width: maxWidth, height: maxWidth)
-                        .cornerRadius(10)
                 }
-
-                Text("character_detail_description_status \(viewModel.status.localizedTitle)")
-                Text("character_detail_description_species \(viewModel.species)")
-                Text("character_detail_description_type \(viewModel.type)")
-                Text("character_detail_description_gender \(viewModel.gender.localizedTitle)")
-                Text("character_detail_description_origin_location \(viewModel.originName)")
-                Text("character_detail_description_last_location \(viewModel.lastLocationName)")
             }
-            .navigationBarTitle(viewModel.name)
-            .navigationBarTitleDisplayMode(.inline)
-            .padding([.leading, .trailing], horizontalPadding)
-        }
+            .cornerRadius(10)
 
-        Spacer()
+            HStack {
+                Text("character_detail_title_info")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                Spacer()
+            }
+
+            GroupBox {
+                ScrollView {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Label(
+                                "character_detail_description_status \(viewModel.status.localizedTitle)",
+                                systemImage: "eyes"
+                            )
+                            .imageScale(.large)
+
+                            Label(
+                                "character_detail_description_species \(viewModel.species)",
+                                systemImage: "person.text.rectangle"
+                            )
+                            .imageScale(.large)
+
+                            Label(
+                                "character_detail_description_type \(viewModel.type)",
+                                systemImage: "person.and.background.dotted"
+                            )
+                            .imageScale(.large)
+
+                            Label(
+                                "character_detail_description_gender \(viewModel.gender.localizedTitle)",
+                                systemImage: "person.crop.square.filled.and.at.rectangle"
+                            )
+                            .imageScale(.large)
+
+                            Label(
+                                "character_detail_description_origin_location \(viewModel.originName)",
+                                systemImage: "airplane.departure"
+                            )
+                            .imageScale(.large)
+
+                            Label(
+                                "character_detail_description_last_location \(viewModel.lastLocationName)",
+                                systemImage: "airplane.arrival"
+                            )
+                            .imageScale(.large)
+                        }
+
+                        Spacer()
+                    }
+                }
+            }
+        }
+        .navigationBarTitle(viewModel.name)
+        .navigationBarTitleDisplayMode(.inline)
+        .padding()
     }
 }
 
