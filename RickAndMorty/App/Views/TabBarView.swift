@@ -32,7 +32,11 @@ struct TabBarView: View {
                     }
                     .tag(2)
             }
-            .toolbarBackground(Color("TabViewBackgroundColor"), for: .tabBar)
+            .toolbarBackground(
+                Color("TabViewBackgroundColor")
+                    .opacity(0.5),
+                for: .tabBar
+            )
             .toolbarBackground(.visible, for: .tabBar)
             .toolbarColorScheme(.dark, for: .tabBar)
         }

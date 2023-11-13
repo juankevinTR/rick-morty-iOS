@@ -24,35 +24,46 @@ struct HomeView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                if let characters = homeViewModel.characters {
-                    ScrollView(.vertical) {
-                        LazyVStack {
-                            ForEach(characters, id: \.self) { character in
-                                NavigationLink(destination: CharacterDetailView(character: character)) {
-                                    CharacterCardView(character: character)
-                                        .padding([.leading, .trailing], 10)
+            GeometryReader { geometry in
+                ScrollView {
+                    ZStack {
+                        Rectangle()
+                            .fill(
+                                Color("TabViewItemBackgroundColor")
+                                    .opacity(0.5)
+                            )
+
+                        if let characters = homeViewModel.characters {
+                            ScrollView(.vertical) {
+                                LazyVStack {
+                                    ForEach(characters, id: \.self) { character in
+                                        NavigationLink(destination: CharacterDetailView(character: character)) {
+                                            CharacterCardView(character: character)
+                                        }
+                                        .buttonStyle(.plain)
+                                    }
                                 }
-                                .buttonStyle(.plain)
+                                .padding()
                             }
+                        } else if homeViewModel.loading {
+                            ProgressView()
+                        } else {
+                            Text("view_no_characters_found")
                         }
                     }
-                } else if homeViewModel.loading {
-                    ProgressView()
-                } else {
-                    Text("view_no_characters_found")
+                    .frame(minHeight: geometry.size.height)
                 }
-            }
-            .navigationBarTitle("view_tabbar_home")
-            .onAppear {
-                if !didOnAppearFinish {
+                .navigationBarTitle("view_tabbar_home")
+                .onAppear {
+                    if !didOnAppearFinish {
+                        homeViewModel.fetchRandomCharacters()
+                        self.didOnAppearFinish = true
+                    }
+                }
+                .refreshable {
+                    // Pull-to-refresh to get another random characters
                     homeViewModel.fetchRandomCharacters()
-                    self.didOnAppearFinish = true
                 }
-            }
-            .refreshable {
-                // Pull-to-refresh to get another random characters
-                homeViewModel.fetchRandomCharacters()
             }
         }
     }
