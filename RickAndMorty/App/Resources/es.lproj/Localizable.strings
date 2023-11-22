@@ -10,6 +10,7 @@
 
 "api_request_invalid_default_base_url" = "No se pudo obtener la url base de la API.";
 
+"character_detail_title_info" = "Información";
 "character_detail_description_status %@" = "Estado: %1$@";
 "character_detail_description_species %@" = "Especie: %1$@";
 "character_detail_description_type %@" = "Tipo: %1$@";

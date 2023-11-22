@@ -9,13 +9,13 @@ import SwiftUI
 
 struct CharactersView: View {
     @State private var didOnAppearFinish = false
-    @StateObject private var charactersViewModel: CharactersViewModel
+    @StateObject private var viewModel: CharactersViewModel
 
     init() {
         let networkService: NetworkService = NetworkServiceImpl()
 
         let charactersWithPaginationRepository = CharactersWithPaginationRepositoryImpl(networkService: networkService)
-        self._charactersViewModel = StateObject(
+        self._viewModel = StateObject(
             wrappedValue: CharactersViewModel(
                 charactersWithPaginationRepository: charactersWithPaginationRepository
             )
@@ -25,26 +25,30 @@ struct CharactersView: View {
     var body: some View {
         NavigationView {
             VStack {
-                if let characters = charactersViewModel.characters {
+                if let characters = viewModel.characters {
                     List {
                         ForEach(characters, id: \.self) { character in
                             NavigationLink(destination: CharacterDetailView(character: character)) {
                                 HStack {
-                                    Text("[\(character.id)]")
+                                    CircleTextView(
+                                        color: character.status?.color ?? Color("CharacterStatusUnknownColor"),
+                                        text: "\(character.id)"
+                                    )
+                                        .frame(maxWidth: 45, maxHeight: 45)
                                     Text("\(character.name)")
                                 }
                                 .padding()
                             }
                         }
 
-                        if charactersViewModel.nextPage != nil {
+                        if viewModel.nextPage != nil {
                             ProgressView()
                                 .onAppear {
-                                    charactersViewModel.fetchNextCharactersSet()
+                                    viewModel.fetchNextCharactersSet()
                                 }
                         }
                     }
-                } else if charactersViewModel.loading {
+                } else if viewModel.loading {
                     ProgressView()
                 } else {
                     Text("view_no_characters_found")
@@ -53,7 +57,7 @@ struct CharactersView: View {
             .navigationBarTitle("view_tabbar_characters")
             .onAppear {
                 if !didOnAppearFinish {
-                    charactersViewModel.fetchFirstCharactersSet()
+                    viewModel.fetchFirstCharactersSet()
                     self.didOnAppearFinish = true
                 }
             }
