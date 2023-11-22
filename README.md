@@ -11,14 +11,9 @@
 
 This iOS app is a reality for having a product to show my skills for future job opportunities.
 
-## Screenshots
-
-[![Home Screen Shot][home-screenshot]](https://github.com/juankevinTR/rick-morty-iOS)
-[![Home Screen Shot][home-navigation-screenshot]](https://github.com/juankevinTR/rick-morty-iOS)
-[![Characters Screen Shot][characters-screenshot]](https://github.com/juankevinTR/rick-morty-iOS)
-[![Episodes Screen Shot][episodes-screenshot]](https://github.com/juankevinTR/rick-morty-iOS)
-[![Episode 1 Screen Shot][episodes-1-screenshot]](https://github.com/juankevinTR/rick-morty-iOS)
-[![Episode 1 Character Screen Shot][episodes-1-character-screenshot]](https://github.com/juankevinTR/rick-morty-iOS)
+| Home | Home-Character | Characters | Episodes | Episode1 | Episode1-Character2 |
+| --- | --- | --- | --- | --- | --- |
+| ![Home Screen Shot][home-screenshot] | ![Home Screen Shot][home-navigation-screenshot] | ![Characters Screen Shot][characters-screenshot] | ![Episodes Screen Shot][episodes-screenshot] | ![Episode 1 Screen Shot][episodes-1-screenshot] | ![Episode 1 Character Screen Shot][episodes-1-character-screenshot]
 
 <!-- BUILD WITH -->
 ### Built With
@@ -58,13 +53,15 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 * [Rick and Morty API](https://rickandmortyapi.com)
 * [App Image](https://static.wikia.nocookie.net/geekpediabr/images/a/a4/8641CD99-093F-4F85-9A26-388494EB3A7F.jpeg/revision/latest?cb=20190722190346)
 
+
+
 <!-- MARKDOWN IMAGES -->
-[home-screenshot]: images/1.Home.png
-[home-navigation-screenshot]: images/2.Home-navigation.png
-[characters-screenshot]: images/3.Characters.png
-[episodes-screenshot]: images/4.Episodes.png
-[episodes-1-screenshot]: images/5.Episodes-1.png
-[episodes-1-character-screenshot]: images/6.Episodes-1-character.png
+[home-screenshot]: Screenshots/1.Home.png
+[home-navigation-screenshot]: Screenshots/2.Home-navigation.png
+[characters-screenshot]: Screenshots/3.Characters.png
+[episodes-screenshot]: Screenshots/4.Episodes.png
+[episodes-1-screenshot]: Screenshots/5.Episodes-1.png
+[episodes-1-character-screenshot]: Screenshots/6.Episodes-1-character.png
 
 <!-- MARKDOWN LINKS -->
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
