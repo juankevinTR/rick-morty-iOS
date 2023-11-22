@@ -5,6 +5,7 @@
 
 <!-- TITLE -->
 # Rick and Morty iOS
+##### Current version: 1.0.0 (Built 1)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
