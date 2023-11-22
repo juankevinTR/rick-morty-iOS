@@ -1,0 +1,45 @@
+/* 
+  Localizable.strings
+  RickAndMorty
+
+  Created by Juan Kevin Trujillo on 26/7/23.
+  
+*/
+
+"hello_world" = "¡Hola, mundo!";
+
+"api_request_invalid_default_base_url" = "No se pudo obtener la url base de la API.";
+
+"character_detail_title_info" = "Información";
+"character_detail_description_status %@" = "Estado: %1$@";
+"character_detail_description_species %@" = "Especie: %1$@";
+"character_detail_description_type %@" = "Tipo: %1$@";
+"character_detail_description_gender %@" = "Género: %1$@";
+"character_detail_description_origin_location %@" = "Origen: %1$@";
+"character_detail_description_last_location %@" = "Última ubicación: %1$@";
+
+"character_gender_female" = "Femenino";
+"character_gender_male" = "Masculino";
+"character_gender_unknown" = "Desconocido";
+
+"character_status_alive" = "Vivo";
+"character_status_dead" = "Fallecido";
+"character_status_unknown" = "Desconocido";
+
+"episode_detail_title_info" = "Información";
+"episode_detail_title_characters" = "Personajes";
+"episode_detail_title %@" = "Título: %1$@";
+"episode_detail_season %@" = "Temporada: %1$@";
+"episode_detail_episode %@" = "Episodio: %1$@";
+"episode_detail_air_date %@" = "Fecha de emisión: %1$@";
+
+"network_service_decoding_error" = "Error de decodificación";
+"network_service_invalid_response" = "Respuesta no válida";
+"network_service_invalid_url" = "URL no válida";
+"network_service_no_data" = "No se recibieron datos";
+
+"view_tabbar_home" = "Inicio";
+"view_tabbar_characters" = "Personajes";
+"view_tabbar_episodes" = "Episodios";
+
+"view_no_characters_found" = "Personajes no encontrados";
